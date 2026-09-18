@@ -66,8 +66,12 @@ here — four cached fetches, four entries, tags on the correct two.
 
 ## Open questions this app is built to answer
 
-1. **Does the ISR store survive across replicas?** The primary question.
-   Measured by `everDiverged` and `allFreshMs` per cell.
+1. **How bad is replica divergence?** Not *whether* — engineering has confirmed
+   there is no shared cache store for App Router, so divergence is the expected
+   behaviour, not a hypothesis. What's unknown is severity: how many replicas,
+   what fraction stays stale after a purge, and how long until natural TTL
+   expiry closes the gap. Measured by `everDiverged`, `firstFreshMs` and
+   `allFreshMs` per cell.
 2. **Does `revalidatePath`/`revalidateTag` work from an App Router Route
    Handler?** Locally it threw `E263` from `pages/api` (no work store) and
    returned `ok:true` from a Route Handler. Whether Atlas's cache handler
@@ -78,11 +82,14 @@ here — four cached fetches, four entries, tags on the correct two.
    `CachedRouteKind.PAGES`. If that holds, App Router writes fresh content into
    the ISR store and the edge keeps serving stale — making `@wpengine/edge-cache`
    mandatory rather than an optimisation.
-4. **Is the shared KV cache actually on for this environment?** `kv` in every
-   probe reports `HEADLESS_KV_STORE_URL` / `..._TOKEN` presence and
-   `HEADLESS_CACHE_HANDLER_ROLLOUT_PERCENT`. The rollout gate is per-cache-key
-   (`sha256(key) % 100`), so a partial rollout means *some keys* are shared and
-   others are not — which would look exactly like nondeterministic staleness.
+4. **Confirming there is no shared store.** WP Engine engineering has confirmed
+   there is no shared KV cache available for App Router; the `kvStore` client in
+   atlas-next's dist is gated on `HEADLESS_KV_STORE_URL` / `..._TOKEN` and its
+   on-demand semantics are Pages-Router-only (empty `nextRevalidateMethod` for
+   App Router entries, `isODISR` gated on `CachedRouteKind.PAGES`,
+   `revalidateTag` never calling KV at all). The `kv` block in every probe
+   reports those env vars so the run **evidences** that rather than assuming it.
+   This is a confirmation check, not an open variable.
 
 ## Running it
 
