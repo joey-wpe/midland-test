@@ -132,6 +132,56 @@ Busted requests to a route that had just been revalidated returned
 requests returned `REVALIDATED` while serving a nine-minute-old copy from
 Cloudflare. Matches the local finding. Do not diagnose with this header.
 
+### 3.6 `purgeTags` works, and it discriminates by tag
+
+Run: build `1ce79ef4`+ (revision `00010`). Raw: `results/edge-tag-purge.json`.
+Script: `scripts/run-edge-tag-purge.mjs`. Cost: 2 purge operations.
+
+§3.2 showed the edge can only be fixed by an explicit purge, but `purgePaths`
+is the wrong ergonomics for the customer: a `save_post` hook knows a post ID,
+not which routes render it, so it forces a post-ID-to-paths map maintained in
+PHP and kept in sync with Next routing by hand. `purgeTags` removes that.
+
+Routes are tagged via `next.config.ts` `headers()` — `/a`, `/c`, `/e`, `/rh`,
+`/rt` each carry `Cache-Tag: post-3267,route-<x>`.
+
+| Arm | Call | Expected fresh | Expected untouched | Result |
+|---|---|---|---|---|
+| `narrow` | `purgeTags(['route-a'])` | `/a` | `/c`, `/rt` | `/a` fresh at **2475ms**, controls untouched |
+| `broad` | `purgeTags(['post-3267'])` | `/a`,`/c`,`/rh`,`/rt` | — | **all four fresh at 221ms, one call** |
+
+Both arms confirmed origin-fresh and edge-stale immediately before purging, so
+neither measured an incidental expiry.
+
+**The narrow arm is the load-bearing one.** Cloudflare strips `Cache-Tag`
+before the response reaches a client, so there is no way to read the header
+back and confirm it landed — and a broad purge alone cannot distinguish "the
+tag purge worked" from "something purged everything." Untouched routes staying
+stale is the only observation that proves the edge honours these specific tags.
+
+It held, and the delayed check is stronger than the in-loop one. Twenty seconds
+after the `route-a` purge, `/c` and `/rt` were still serving `16:25:27` — a
+version from the *previous* test run — while their origins had been revalidated
+to `16:29:25` and `/a`'s edge had refreshed to it:
+
+```
+/a   edge 2026-09-18T16:29:25   (purged by tag)
+/c   edge 2026-09-18T16:25:27   origin was 16:29:25   (not purged)
+/rt  edge 2026-09-18T16:25:27   origin was 16:29:25   (not purged)
+```
+
+That single table is also the cleanest restatement of §3.1: three routes, all
+fresh at the origin, and only the tagged one reached a visitor.
+
+**What this means for the customer.** One `purgeTags(['post-3267'])` from a
+`save_post` hook invalidates every route rendering that post, with no route map
+in PHP. Under the hourly cap this is also the economical shape — batching many
+tags into one call is one operation regardless of tag count (30 tags/call,
+~300 operations/hour/environment).
+
+Ordering from §3.2 still applies unchanged: **revalidate the origin first, then
+purge.** Nothing about tags relaxes that.
+
 ## 4. Replica divergence — ANSWERED, and not the way we expected
 
 The first pass ran on a single replica and could not test this. A second pass
@@ -264,6 +314,9 @@ On this evidence, for an App Router route on Atlas:
 
 1. **Revalidate, then purge the edge.** Either mechanism alone leaves visitors
    on stale content. Both, in order, refresh everything in ~300ms.
+   Prefer `purgeTags` over `purgePaths` for the purge step (§3.6): tag the
+   routes with the content they render, and WordPress can invalidate by post ID
+   without knowing the route table.
 2. **An App Router Route Handler is sufficient** for the revalidation step —
    the `pages/api` endpoint is optional, not required (§3.3). `revalidateTag`
    is available there and propagates fleet-wide (§4b), so invalidation can be
