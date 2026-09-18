@@ -182,6 +182,28 @@ tags into one call is one operation regardless of tag count (30 tags/call,
 Ordering from §3.2 still applies unchanged: **revalidate the origin first, then
 purge.** Nothing about tags relaxes that.
 
+### 3.6a The full sequence, content-keyed at both layers
+
+The two halves above had each been measured, but never the whole chain in the
+form actually recommended. §2's `revalidate-then-purge` used
+`res.revalidate` + `purgePaths`, and §3.6's broad arm used `revalidatePath` +
+`purgeTags` — both still name a route somewhere. Raw:
+`results/edge-tag-to-tag.json`.
+
+```
+revalidateTag('rt-content')   ->  origin fresh 4/4
+purgeTags(['route-rt'])       ->  edge fresh at 2446ms
+/c (control, untargeted)      ->  still stale throughout
+```
+
+So the whole path from a `save_post` hook to a visitor can be expressed without
+WordPress knowing a single Next route: name the content at the origin, name it
+again at the edge. This is the sequence to put in front of the customer.
+
+(The run reports `originReady=false`; that is a harness artifact — the check
+spans every route in the arm including the deliberately untargeted control.
+`/rt`, the route under test, was 4/4 at the origin before the purge.)
+
 ## 4. Replica divergence — ANSWERED, and not the way we expected
 
 The first pass ran on a single replica and could not test this. A second pass

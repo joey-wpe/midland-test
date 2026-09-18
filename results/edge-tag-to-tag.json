@@ -1,0 +1,591 @@
+{
+  "startedAt": "2026-09-18T19:48:51.453Z",
+  "base": "https://h1zqz5eo211ukydaab4lzvbse.js.wpenginepowered.com",
+  "arms": [
+    {
+      "id": "tag-to-tag",
+      "tags": [
+        "route-rt"
+      ],
+      "note": "revalidateTag then purgeTags — WordPress names content, never a route",
+      "published": {
+        "mode": "rest",
+        "status": 200,
+        "modifiedGmt": "2026-09-18T19:48:53"
+      },
+      "originBefore": {
+        "/rt": {
+          "path": "/rt",
+          "fresh": 4,
+          "n": 4,
+          "allFresh": true,
+          "samples": [
+            {
+              "path": "/rt",
+              "bust": true,
+              "status": 200,
+              "modifiedGmt": "2026-09-18T19:48:53",
+              "renderedAt": "2026-09-18T19:48:58.372Z",
+              "serving": "edbbe321",
+              "rendering": "edbbe321",
+              "cf": "MISS",
+              "age": null,
+              "nextCache": "REVALIDATED",
+              "at": "2026-09-18T19:48:58.492Z"
+            },
+            {
+              "path": "/rt",
+              "bust": true,
+              "status": 200,
+              "modifiedGmt": "2026-09-18T19:48:53",
+              "renderedAt": "2026-09-18T19:48:58.372Z",
+              "serving": "edbbe321",
+              "rendering": "edbbe321",
+              "cf": "MISS",
+              "age": null,
+              "nextCache": "HIT",
+              "at": "2026-09-18T19:48:58.493Z"
+            },
+            {
+              "path": "/rt",
+              "bust": true,
+              "status": 200,
+              "modifiedGmt": "2026-09-18T19:48:53",
+              "renderedAt": "2026-09-18T19:48:58.372Z",
+              "serving": "edbbe321",
+              "rendering": "edbbe321",
+              "cf": "MISS",
+              "age": null,
+              "nextCache": "HIT",
+              "at": "2026-09-18T19:48:58.492Z"
+            },
+            {
+              "path": "/rt",
+              "bust": true,
+              "status": 200,
+              "modifiedGmt": "2026-09-18T19:48:53",
+              "renderedAt": "2026-09-18T19:48:58.372Z",
+              "serving": "edbbe321",
+              "rendering": "edbbe321",
+              "cf": "MISS",
+              "age": null,
+              "nextCache": "HIT",
+              "at": "2026-09-18T19:48:58.493Z"
+            }
+          ]
+        },
+        "/c": {
+          "path": "/c",
+          "fresh": 0,
+          "n": 4,
+          "allFresh": false,
+          "samples": [
+            {
+              "path": "/c",
+              "bust": true,
+              "status": 200,
+              "modifiedGmt": "2026-09-18T19:39:25",
+              "renderedAt": "2026-09-18T19:48:52.555Z",
+              "serving": "edbbe321",
+              "rendering": "edbbe321",
+              "cf": "MISS",
+              "age": null,
+              "nextCache": "HIT",
+              "at": "2026-09-18T19:48:58.602Z"
+            },
+            {
+              "path": "/c",
+              "bust": true,
+              "status": 200,
+              "modifiedGmt": "2026-09-18T19:39:25",
+              "renderedAt": "2026-09-18T19:48:52.555Z",
+              "serving": "edbbe321",
+              "rendering": "edbbe321",
+              "cf": "MISS",
+              "age": null,
+              "nextCache": "HIT",
+              "at": "2026-09-18T19:48:58.612Z"
+            },
+            {
+              "path": "/c",
+              "bust": true,
+              "status": 200,
+              "modifiedGmt": "2026-09-18T19:39:25",
+              "renderedAt": "2026-09-18T19:48:52.555Z",
+              "serving": "edbbe321",
+              "rendering": "edbbe321",
+              "cf": "MISS",
+              "age": null,
+              "nextCache": "HIT",
+              "at": "2026-09-18T19:48:58.612Z"
+            },
+            {
+              "path": "/c",
+              "bust": true,
+              "status": 200,
+              "modifiedGmt": "2026-09-18T19:39:25",
+              "renderedAt": "2026-09-18T19:48:52.555Z",
+              "serving": "edbbe321",
+              "rendering": "edbbe321",
+              "cf": "MISS",
+              "age": null,
+              "nextCache": "HIT",
+              "at": "2026-09-18T19:48:58.612Z"
+            }
+          ]
+        }
+      },
+      "originReady": false,
+      "edgeBefore": {
+        "/rt": {
+          "path": "/rt",
+          "fresh": 0,
+          "n": 4,
+          "allFresh": false,
+          "versions": [
+            "2026-09-18T19:39:25"
+          ],
+          "cf": [
+            "HIT"
+          ],
+          "maxAge": 5,
+          "samples": [
+            {
+              "path": "/rt",
+              "bust": false,
+              "status": 200,
+              "modifiedGmt": "2026-09-18T19:39:25",
+              "renderedAt": "2026-09-18T19:48:52.668Z",
+              "serving": "edbbe321",
+              "rendering": "edbbe321",
+              "cf": "HIT",
+              "age": "5",
+              "nextCache": "REVALIDATED",
+              "at": "2026-09-18T19:48:58.661Z"
+            },
+            {
+              "path": "/rt",
+              "bust": false,
+              "status": 200,
+              "modifiedGmt": "2026-09-18T19:39:25",
+              "renderedAt": "2026-09-18T19:48:52.668Z",
+              "serving": "edbbe321",
+              "rendering": "edbbe321",
+              "cf": "HIT",
+              "age": "5",
+              "nextCache": "REVALIDATED",
+              "at": "2026-09-18T19:48:58.665Z"
+            },
+            {
+              "path": "/rt",
+              "bust": false,
+              "status": 200,
+              "modifiedGmt": "2026-09-18T19:39:25",
+              "renderedAt": "2026-09-18T19:48:52.668Z",
+              "serving": "edbbe321",
+              "rendering": "edbbe321",
+              "cf": "HIT",
+              "age": "5",
+              "nextCache": "REVALIDATED",
+              "at": "2026-09-18T19:48:58.671Z"
+            },
+            {
+              "path": "/rt",
+              "bust": false,
+              "status": 200,
+              "modifiedGmt": "2026-09-18T19:39:25",
+              "renderedAt": "2026-09-18T19:48:52.668Z",
+              "serving": "edbbe321",
+              "rendering": "edbbe321",
+              "cf": "HIT",
+              "age": "5",
+              "nextCache": "REVALIDATED",
+              "at": "2026-09-18T19:48:58.664Z"
+            }
+          ]
+        },
+        "/c": {
+          "path": "/c",
+          "fresh": 0,
+          "n": 4,
+          "allFresh": false,
+          "versions": [
+            "2026-09-18T19:39:25"
+          ],
+          "cf": [
+            "HIT"
+          ],
+          "maxAge": 6,
+          "samples": [
+            {
+              "path": "/c",
+              "bust": false,
+              "status": 200,
+              "modifiedGmt": "2026-09-18T19:39:25",
+              "renderedAt": "2026-09-18T19:48:52.555Z",
+              "serving": "edbbe321",
+              "rendering": "edbbe321",
+              "cf": "HIT",
+              "age": "6",
+              "nextCache": "REVALIDATED",
+              "at": "2026-09-18T19:48:58.723Z"
+            },
+            {
+              "path": "/c",
+              "bust": false,
+              "status": 200,
+              "modifiedGmt": "2026-09-18T19:39:25",
+              "renderedAt": "2026-09-18T19:48:52.555Z",
+              "serving": "edbbe321",
+              "rendering": "edbbe321",
+              "cf": "HIT",
+              "age": "6",
+              "nextCache": "REVALIDATED",
+              "at": "2026-09-18T19:48:58.731Z"
+            },
+            {
+              "path": "/c",
+              "bust": false,
+              "status": 200,
+              "modifiedGmt": "2026-09-18T19:39:25",
+              "renderedAt": "2026-09-18T19:48:52.555Z",
+              "serving": "edbbe321",
+              "rendering": "edbbe321",
+              "cf": "HIT",
+              "age": "6",
+              "nextCache": "REVALIDATED",
+              "at": "2026-09-18T19:48:58.731Z"
+            },
+            {
+              "path": "/c",
+              "bust": false,
+              "status": 200,
+              "modifiedGmt": "2026-09-18T19:39:25",
+              "renderedAt": "2026-09-18T19:48:52.555Z",
+              "serving": "edbbe321",
+              "rendering": "edbbe321",
+              "cf": "HIT",
+              "age": "6",
+              "nextCache": "REVALIDATED",
+              "at": "2026-09-18T19:48:58.722Z"
+            }
+          ]
+        }
+      },
+      "edgeStale": true,
+      "purge": {
+        "tags": [
+          "route-rt"
+        ],
+        "status": 200,
+        "body": {
+          "ok": true,
+          "method": "purgeTags",
+          "tags": [
+            "route-rt"
+          ],
+          "instance": {
+            "id": "edbbe321",
+            "host": "h1zqz5eo211ukydaab4lzvbse-00014-deployment-7d5fdf47b5-c46zg",
+            "pid": 18,
+            "bootedAt": "2026-09-18T19:41:35.011Z"
+          }
+        },
+        "at": "2026-09-18T19:48:59.059Z"
+      },
+      "freshMs": {
+        "/rt": 2446
+      },
+      "verdict": {
+        "targetsRefreshed": [
+          "/rt"
+        ],
+        "targetsMissed": [],
+        "controlLeaked": [],
+        "discriminating": true
+      },
+      "rounds": [
+        {
+          "elapsedMs": 328,
+          "state": {
+            "/rt": {
+              "path": "/rt",
+              "fresh": 0,
+              "n": 4,
+              "allFresh": false,
+              "versions": [
+                "2026-09-18T19:39:25"
+              ],
+              "cf": [
+                "HIT"
+              ],
+              "maxAge": 6,
+              "samples": [
+                {
+                  "path": "/rt",
+                  "bust": false,
+                  "status": 200,
+                  "modifiedGmt": "2026-09-18T19:39:25",
+                  "renderedAt": "2026-09-18T19:48:52.668Z",
+                  "serving": "edbbe321",
+                  "rendering": "edbbe321",
+                  "cf": "HIT",
+                  "age": "6",
+                  "nextCache": "REVALIDATED",
+                  "at": "2026-09-18T19:48:59.115Z"
+                },
+                {
+                  "path": "/rt",
+                  "bust": false,
+                  "status": 200,
+                  "modifiedGmt": "2026-09-18T19:39:25",
+                  "renderedAt": "2026-09-18T19:48:52.668Z",
+                  "serving": "edbbe321",
+                  "rendering": "edbbe321",
+                  "cf": "HIT",
+                  "age": "6",
+                  "nextCache": "REVALIDATED",
+                  "at": "2026-09-18T19:48:59.115Z"
+                },
+                {
+                  "path": "/rt",
+                  "bust": false,
+                  "status": 200,
+                  "modifiedGmt": "2026-09-18T19:39:25",
+                  "renderedAt": "2026-09-18T19:48:52.668Z",
+                  "serving": "edbbe321",
+                  "rendering": "edbbe321",
+                  "cf": "HIT",
+                  "age": "6",
+                  "nextCache": "REVALIDATED",
+                  "at": "2026-09-18T19:48:59.115Z"
+                },
+                {
+                  "path": "/rt",
+                  "bust": false,
+                  "status": 200,
+                  "modifiedGmt": "2026-09-18T19:39:25",
+                  "renderedAt": "2026-09-18T19:48:52.668Z",
+                  "serving": "edbbe321",
+                  "rendering": "edbbe321",
+                  "cf": "HIT",
+                  "age": "6",
+                  "nextCache": "REVALIDATED",
+                  "at": "2026-09-18T19:48:59.115Z"
+                }
+              ]
+            },
+            "/c": {
+              "path": "/c",
+              "fresh": 0,
+              "n": 4,
+              "allFresh": false,
+              "versions": [
+                "2026-09-18T19:39:25"
+              ],
+              "cf": [
+                "HIT"
+              ],
+              "maxAge": 6,
+              "samples": [
+                {
+                  "path": "/c",
+                  "bust": false,
+                  "status": 200,
+                  "modifiedGmt": "2026-09-18T19:39:25",
+                  "renderedAt": "2026-09-18T19:48:52.555Z",
+                  "serving": "edbbe321",
+                  "rendering": "edbbe321",
+                  "cf": "HIT",
+                  "age": "6",
+                  "nextCache": "REVALIDATED",
+                  "at": "2026-09-18T19:48:59.159Z"
+                },
+                {
+                  "path": "/c",
+                  "bust": false,
+                  "status": 200,
+                  "modifiedGmt": "2026-09-18T19:39:25",
+                  "renderedAt": "2026-09-18T19:48:52.555Z",
+                  "serving": "edbbe321",
+                  "rendering": "edbbe321",
+                  "cf": "HIT",
+                  "age": "6",
+                  "nextCache": "REVALIDATED",
+                  "at": "2026-09-18T19:48:59.170Z"
+                },
+                {
+                  "path": "/c",
+                  "bust": false,
+                  "status": 200,
+                  "modifiedGmt": "2026-09-18T19:39:25",
+                  "renderedAt": "2026-09-18T19:48:52.555Z",
+                  "serving": "edbbe321",
+                  "rendering": "edbbe321",
+                  "cf": "HIT",
+                  "age": "6",
+                  "nextCache": "REVALIDATED",
+                  "at": "2026-09-18T19:48:59.176Z"
+                },
+                {
+                  "path": "/c",
+                  "bust": false,
+                  "status": 200,
+                  "modifiedGmt": "2026-09-18T19:39:25",
+                  "renderedAt": "2026-09-18T19:48:52.555Z",
+                  "serving": "edbbe321",
+                  "rendering": "edbbe321",
+                  "cf": "HIT",
+                  "age": "6",
+                  "nextCache": "REVALIDATED",
+                  "at": "2026-09-18T19:48:59.170Z"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "elapsedMs": 2446,
+          "state": {
+            "/rt": {
+              "path": "/rt",
+              "fresh": 4,
+              "n": 4,
+              "allFresh": true,
+              "versions": [
+                "2026-09-18T19:48:53"
+              ],
+              "cf": [
+                "HIT",
+                "MISS"
+              ],
+              "maxAge": 0,
+              "samples": [
+                {
+                  "path": "/rt",
+                  "bust": false,
+                  "status": 200,
+                  "modifiedGmt": "2026-09-18T19:48:53",
+                  "renderedAt": "2026-09-18T19:48:58.372Z",
+                  "serving": "edbbe321",
+                  "rendering": "edbbe321",
+                  "cf": "HIT",
+                  "age": "0",
+                  "nextCache": "HIT",
+                  "at": "2026-09-18T19:49:01.289Z"
+                },
+                {
+                  "path": "/rt",
+                  "bust": false,
+                  "status": 200,
+                  "modifiedGmt": "2026-09-18T19:48:53",
+                  "renderedAt": "2026-09-18T19:48:58.372Z",
+                  "serving": "edbbe321",
+                  "rendering": "edbbe321",
+                  "cf": "HIT",
+                  "age": "0",
+                  "nextCache": "HIT",
+                  "at": "2026-09-18T19:49:01.294Z"
+                },
+                {
+                  "path": "/rt",
+                  "bust": false,
+                  "status": 200,
+                  "modifiedGmt": "2026-09-18T19:48:53",
+                  "renderedAt": "2026-09-18T19:48:58.372Z",
+                  "serving": "edbbe321",
+                  "rendering": "edbbe321",
+                  "cf": "HIT",
+                  "age": "0",
+                  "nextCache": "HIT",
+                  "at": "2026-09-18T19:49:01.296Z"
+                },
+                {
+                  "path": "/rt",
+                  "bust": false,
+                  "status": 200,
+                  "modifiedGmt": "2026-09-18T19:48:53",
+                  "renderedAt": "2026-09-18T19:48:58.372Z",
+                  "serving": "edbbe321",
+                  "rendering": "edbbe321",
+                  "cf": "MISS",
+                  "age": null,
+                  "nextCache": "HIT",
+                  "at": "2026-09-18T19:49:01.294Z"
+                }
+              ]
+            },
+            "/c": {
+              "path": "/c",
+              "fresh": 0,
+              "n": 4,
+              "allFresh": false,
+              "versions": [
+                "2026-09-18T19:39:25"
+              ],
+              "cf": [
+                "HIT"
+              ],
+              "maxAge": 8,
+              "samples": [
+                {
+                  "path": "/c",
+                  "bust": false,
+                  "status": 200,
+                  "modifiedGmt": "2026-09-18T19:39:25",
+                  "renderedAt": "2026-09-18T19:48:52.555Z",
+                  "serving": "edbbe321",
+                  "rendering": "edbbe321",
+                  "cf": "HIT",
+                  "age": "8",
+                  "nextCache": "REVALIDATED",
+                  "at": "2026-09-18T19:49:01.350Z"
+                },
+                {
+                  "path": "/c",
+                  "bust": false,
+                  "status": 200,
+                  "modifiedGmt": "2026-09-18T19:39:25",
+                  "renderedAt": "2026-09-18T19:48:52.555Z",
+                  "serving": "edbbe321",
+                  "rendering": "edbbe321",
+                  "cf": "HIT",
+                  "age": "8",
+                  "nextCache": "REVALIDATED",
+                  "at": "2026-09-18T19:49:01.442Z"
+                },
+                {
+                  "path": "/c",
+                  "bust": false,
+                  "status": 200,
+                  "modifiedGmt": "2026-09-18T19:39:25",
+                  "renderedAt": "2026-09-18T19:48:52.555Z",
+                  "serving": "edbbe321",
+                  "rendering": "edbbe321",
+                  "cf": "HIT",
+                  "age": "8",
+                  "nextCache": "REVALIDATED",
+                  "at": "2026-09-18T19:49:01.441Z"
+                },
+                {
+                  "path": "/c",
+                  "bust": false,
+                  "status": 200,
+                  "modifiedGmt": "2026-09-18T19:39:25",
+                  "renderedAt": "2026-09-18T19:48:52.555Z",
+                  "serving": "edbbe321",
+                  "rendering": "edbbe321",
+                  "cf": "HIT",
+                  "age": "8",
+                  "nextCache": "REVALIDATED",
+                  "at": "2026-09-18T19:49:01.350Z"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "finishedAt": "2026-09-18T19:49:01.442Z"
+}

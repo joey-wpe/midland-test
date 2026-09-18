@@ -155,16 +155,25 @@ async function publish() {
   return { mode: "rest", status: res.status, modifiedGmt: body?.modified_gmt ?? null };
 }
 
-/** Refresh the origin for each route. Must precede any edge purge (§3.2). */
-async function refreshOrigin(paths) {
+/**
+ * Refresh the origin. Must precede any edge purge (§3.2).
+ *
+ * `originTags` switches the origin step from revalidatePath to revalidateTag.
+ * That is the difference between a sequence that still needs to know a route
+ * table and one that is content-keyed end to end — the caller names a piece of
+ * content and never a path, at either layer.
+ */
+async function refreshOrigin(paths, originTags) {
   const steps = [];
-  for (const p of paths) {
-    const url = `${BASE}/api/app-revalidate-path?path=${QS(p)}&secret=${QS(SECRET)}`;
-    const res = await fetch(url, { method: "POST", cache: "no-store" });
+  const targets = originTags
+    ? originTags.map((t) => ({ label: `tag:${t}`, url: `${BASE}/api/app-revalidate-tag?tag=${QS(t)}&secret=${QS(SECRET)}` }))
+    : paths.map((p) => ({ label: p, url: `${BASE}/api/app-revalidate-path?path=${QS(p)}&secret=${QS(SECRET)}` }));
+  for (const t of targets) {
+    const res = await fetch(t.url, { method: "POST", cache: "no-store" });
     const body = await res.json().catch(() => null);
-    steps.push({ path: p, status: res.status, ok: body?.ok, pod: body?.instance?.id });
+    steps.push({ target: t.label, status: res.status, ok: body?.ok, pod: body?.instance?.id });
   }
-  log(`  origin revalidated: ${steps.map((s) => `${s.path}=${s.ok}`).join(" ")}`);
+  log(`  origin revalidated: ${steps.map((s) => `${s.target}=${s.ok}`).join(" ")}`);
   return steps;
 }
 
@@ -183,7 +192,7 @@ async function purgeTags(tags) {
  * @param expectFresh routes the purge should refresh
  * @param expectStale routes it must leave alone — the discriminating control
  */
-async function arm({ id, tags, expectFresh, expectStale, note }) {
+async function arm({ id, tags, originTags, expectFresh, expectStale, note }) {
   log(`\n=== ${id}: purgeTags(${JSON.stringify(tags)})`);
   log(`  ${note}`);
   const all = [...expectFresh, ...expectStale];
@@ -195,7 +204,7 @@ async function arm({ id, tags, expectFresh, expectStale, note }) {
   const expected = published.modifiedGmt;
   await sleep(3000);
 
-  await refreshOrigin(all);
+  await refreshOrigin(all, originTags);
   await sleep(1500);
 
   const originBefore = {};
@@ -252,6 +261,17 @@ const ARMS = [
     expectFresh: ["/a"],
     expectStale: ["/c", "/rt"],
     note: "proves the Cache-Tag headers landed and the edge discriminates by tag",
+  },
+  {
+    // The fully content-keyed sequence: a tag at the origin, the same idea at
+    // the edge, no path named at either step. This is the shape recommended in
+    // 3.6/5, and until now each half had been measured but never the whole.
+    id: "tag-to-tag",
+    originTags: ["rt-content"],
+    tags: ["route-rt"],
+    expectFresh: ["/rt"],
+    expectStale: ["/c"],
+    note: "revalidateTag then purgeTags — WordPress names content, never a route",
   },
   {
     id: "broad",
