@@ -1,0 +1,2303 @@
+{
+  "startedAt": "2026-09-18T17:01:48.077Z",
+  "base": "https://h1zqz5eo211ukydaab4lzvbse.js.wpenginepowered.com",
+  "routes": [
+    "/dcsplit",
+    "/dcalign"
+  ],
+  "rounds": [
+    {
+      "elapsedMs": 0,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 1,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:18.082Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:01:40.934Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:18.084Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:01:40.934Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:18.083Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:01:40.934Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 1,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:18.242Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:01:49.274Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:49 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:18.243Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:01:49.274Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:49 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:18.243Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:01:49.274Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:49 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 5412,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 2,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:23.437Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:18.196Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:23.450Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:18.196Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:23.451Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:18.196Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 2,
+          "distinctUpstreamDates": 2,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:23.572Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:18.620Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:18 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:23.569Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:18.620Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:18 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:23.578Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:18.620Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:18 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 10744,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 2,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:28.799Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:18.196Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:28.800Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:18.196Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:28.799Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:18.196Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 2,
+          "distinctUpstreamDates": 2,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:28.943Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:18.620Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:18 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:28.943Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:18.620Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:18 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:28.940Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:18.620Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:18 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 16110,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 2,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:34.159Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:18.196Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:34.167Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:18.196Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:34.163Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:18.196Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 2,
+          "distinctUpstreamDates": 2,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:34.303Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:18.620Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:18 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:34.316Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:18.620Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:18 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:34.303Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:18.620Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:18 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 21484,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 2,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:39.535Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:18.196Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:39.536Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:18.196Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:39.535Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:18.196Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 2,
+          "distinctUpstreamDates": 2,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:39.702Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:18.620Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:18 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:39.702Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:18.620Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:18 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:39.701Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:18.620Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:18 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 26869,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 3,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:44.943Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:39.660Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:44.942Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:39.660Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:44.943Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:39.660Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 3,
+          "distinctUpstreamDates": 3,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:45.073Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:40.057Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:45.065Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:40.057Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:45.065Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:40.057Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 32241,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 3,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:50.311Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:39.660Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:50.307Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:39.660Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:50.308Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:39.660Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 3,
+          "distinctUpstreamDates": 3,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:50.446Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:40.057Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:50.442Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:40.057Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:50.450Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:40.057Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 37617,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 3,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:55.663Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:39.660Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:55.656Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:39.660Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:02:55.663Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:39.660Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 3,
+          "distinctUpstreamDates": 3,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:55.806Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:40.057Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:55.794Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:40.057Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:02:55.800Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:40.057Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 42974,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 3,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:01.066Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:39.660Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:01.064Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:39.660Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:01.064Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:02:39.660Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 3,
+          "distinctUpstreamDates": 3,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:01.193Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:40.057Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:01.189Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:40.057Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:01.190Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:02:40.057Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:02:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 48362,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 4,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:06.400Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:01.176Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:06.404Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:01.176Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:06.404Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:01.176Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 4,
+          "distinctUpstreamDates": 4,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:06.525Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:01.906Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:01 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:06.513Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:01.906Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:01 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:06.525Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:01.906Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:01 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 53693,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 4,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:11.866Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:01.176Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:11.866Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:01.176Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:11.866Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:01.176Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 4,
+          "distinctUpstreamDates": 4,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:12.059Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:01.906Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:01 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:12.059Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:01.906Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:01 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:12.059Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:01.906Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:01 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 59226,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 4,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:17.310Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:01.176Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:17.310Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:01.176Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:17.310Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:01.176Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 4,
+          "distinctUpstreamDates": 4,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:17.498Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:01.906Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:01 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:17.497Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:01.906Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:01 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:17.497Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:01.906Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:01 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 64665,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 4,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:22.724Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:01.176Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:22.728Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:01.176Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:22.725Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:01.176Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 4,
+          "distinctUpstreamDates": 4,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:22.846Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:01.906Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:01 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:22.851Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:01.906Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:01 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:22.846Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:01.906Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:01 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 70018,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 5,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:28.052Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:22.841Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:28.050Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:22.841Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:28.043Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:22.841Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 5,
+          "distinctUpstreamDates": 5,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:28.170Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:23.328Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:23 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:28.157Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:23.328Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:23 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:28.157Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:23.328Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:23 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 75338,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 5,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:33.382Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:22.841Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:33.390Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:22.841Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:33.386Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:22.841Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 5,
+          "distinctUpstreamDates": 5,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:33.553Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:23.328Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:23 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:33.554Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:23.328Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:23 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:33.553Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:23.328Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:23 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 80721,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 5,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:38.813Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:22.841Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:38.808Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:22.841Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:38.807Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:22.841Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 5,
+          "distinctUpstreamDates": 5,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:38.951Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:23.328Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:23 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:38.941Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:23.328Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:23 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:38.933Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:23.328Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:23 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 86118,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 5,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:44.161Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:22.841Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:44.164Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:22.841Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:44.159Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:22.841Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 5,
+          "distinctUpstreamDates": 5,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:44.318Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:23.328Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:23 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:44.311Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:23.328Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:23 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:44.299Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:23.328Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:23 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 91485,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 6,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:49.533Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:44.283Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:49.532Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:44.283Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:49.532Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:44.283Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 6,
+          "distinctUpstreamDates": 6,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:49.660Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:44.869Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:44 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:49.654Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:44.869Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:44 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:49.656Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:44.869Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:44 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 96827,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 6,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:54.895Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:44.283Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:54.895Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:44.283Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:03:54.895Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:44.283Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 6,
+          "distinctUpstreamDates": 6,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:55.071Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:44.869Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:44 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:55.071Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:44.869Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:44 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:03:55.071Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:44.869Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:44 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 102239,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 6,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:00.271Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:44.283Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:00.263Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:44.283Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:00.260Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:44.283Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 6,
+          "distinctUpstreamDates": 6,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:00.450Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:44.869Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:44 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:00.449Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:44.869Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:44 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:00.449Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:44.869Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:44 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 107616,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 6,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:05.707Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:44.283Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:05.709Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:44.283Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:05.719Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:03:44.283Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 6,
+          "distinctUpstreamDates": 6,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:05.844Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:44.869Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:44 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:05.844Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:44.869Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:44 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:05.845Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:03:44.869Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:03:44 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 113012,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 7,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:11.057Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:05.807Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:11.047Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:05.807Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:11.047Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:05.807Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 7,
+          "distinctUpstreamDates": 7,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:11.182Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:06.511Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:06 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:11.183Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:06.511Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:06 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:11.167Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:06.511Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:06 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 118349,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 7,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:16.391Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:05.807Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:16.391Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:05.807Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:16.391Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:05.807Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 7,
+          "distinctUpstreamDates": 7,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:16.494Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:06.511Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:06 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:16.502Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:06.511Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:06 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:16.498Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:06.511Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:06 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 123669,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 7,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:21.700Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:05.807Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:21.700Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:05.807Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:21.700Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:05.807Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 7,
+          "distinctUpstreamDates": 7,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:21.809Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:06.511Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:06 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:21.815Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:06.511Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:06 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:21.807Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:06.511Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:06 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 128982,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 7,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:27.032Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:05.807Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:27.036Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:05.807Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:27.029Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:05.807Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 7,
+          "distinctUpstreamDates": 7,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:27.150Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:06.511Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:06 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:27.150Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:06.511Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:06 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:27.142Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:06.511Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:06 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "STALE"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 134317,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 8,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:32.363Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:27.135Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:32.369Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:27.135Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:32.365Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:27.135Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 8,
+          "distinctUpstreamDates": 8,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:32.469Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:27.616Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:27 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:32.468Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:27.616Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:27 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:32.468Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:27.616Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:27 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 139635,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 8,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:37.682Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:27.135Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:37.687Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:27.135Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:37.687Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:27.135Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 8,
+          "distinctUpstreamDates": 8,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:37.804Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:27.616Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:27 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:37.810Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:27.616Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:27 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:37.816Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:27.616Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:27 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elapsedMs": 144983,
+      "routes": {
+        "/dcsplit": {
+          "fresh": 0,
+          "n": 3,
+          "distinctRenders": 8,
+          "distinctUpstreamDates": 1,
+          "samples": [
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:43.027Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:27.135Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:43.039Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:27.135Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcsplit",
+              "at": "2026-09-18T17:04:43.027Z",
+              "modifiedGmt": "2026-09-18T16:29:36",
+              "renderedAt": "2026-09-18T17:04:27.135Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:01:40 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        },
+        "/dcalign": {
+          "fresh": 3,
+          "n": 3,
+          "distinctRenders": 8,
+          "distinctUpstreamDates": 8,
+          "samples": [
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:43.156Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:27.616Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:27 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:43.155Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:27.616Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:27 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            },
+            {
+              "path": "/dcalign",
+              "at": "2026-09-18T17:04:43.157Z",
+              "modifiedGmt": "2026-09-18T17:02:14",
+              "renderedAt": "2026-09-18T17:04:27.616Z",
+              "upstreamDate": "Fri, 18 Sep 2026 17:04:27 GMT",
+              "serving": "83362fd3",
+              "rendering": "83362fd3",
+              "nextCache": "HIT"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "expected": "2026-09-18T17:02:14",
+  "verdict": {
+    "/dcsplit": {
+      "wentFresh": false,
+      "freshAtMs": null,
+      "distinctRenders": 8,
+      "distinctUpstreamDates": 1,
+      "versionsSeen": [
+        "2026-09-18T16:29:36"
+      ],
+      "regeneratedWithoutFetching": true
+    },
+    "/dcalign": {
+      "wentFresh": true,
+      "freshAtMs": 5412,
+      "distinctRenders": 8,
+      "distinctUpstreamDates": 8,
+      "versionsSeen": [
+        "2026-09-18T16:29:36",
+        "2026-09-18T17:02:14"
+      ],
+      "regeneratedWithoutFetching": false
+    }
+  },
+  "finishedAt": "2026-09-18T17:04:48.158Z"
+}

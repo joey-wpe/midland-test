@@ -345,3 +345,84 @@ the §3.4 question rather than adding to it.
 - The WordPress side used a REST excerpt bump as the publish trigger. A real
   `save_post` hook may differ in timing, though the GraphQL read reflected the
   change within 3s.
+
+## 7. Related: ticket 8617070 (whistleblowersattorneys.com) — reproduced
+
+Different customer, different account, and on the face of it a different
+problem: a WordPress install serving a two-week-old `/graphql` GET response to
+platform-internal traffic while external traffic is always fresh. Three support
+engineers looked for a stale cache node between the Node runtime and PHP.
+
+Raw: `results/datacache-drift.json`. Script: `scripts/run-datacache-drift.mjs`.
+Routes: `app/dcsplit/page.tsx`, `app/dcalign/page.tsx`.
+
+### The observation the ticket turns on
+
+> The page was regenerated ~14:38–14:40 today, still with the old form data —
+> and no gfForm request reached PHP. `x-nextjs-cache` went STALE → HIT.
+
+Read as: a request was sent and something intercepted it. But a regeneration
+that sends *no request at all* leaves exactly this trace, and it needs no
+interceptor. Nginx and Varnish logs will also be empty, because nothing was
+sent — so the trace the customer is asking the platform team to pull is
+expected to come back empty either way, and its emptiness will be misread as
+confirmation.
+
+### The reproduction
+
+Two routes differing in one line. Same backend, same publish, same minutes.
+
+| Route | Route revalidate | Fetch revalidate |
+|---|---|---|
+| `/dcsplit` | 20s | 1 year |
+| `/dcalign` (control) | 20s | 20s |
+
+Signals: `renderedAt` answers "did the component run again" (Full Route Cache);
+`upstreamDate` — WordPress's own `date` header, stored in the fetch-cache entry
+and replayed verbatim on a hit — answers "did a request leave Node" (Data
+Cache).
+
+| Route | Distinct renders | Distinct upstream dates | Went fresh |
+|---|---|---|---|
+| `/dcsplit` | **8** | **1** | **never** |
+| `/dcalign` | 8 | 8 | 5412ms |
+
+`/dcsplit` re-rendered eight times over 150 seconds, every render carrying a new
+`renderedAt` and the *same* `upstreamDate`, still serving content from before
+the publish. `x-nextjs-cache` cycled `STALE → HIT` — the customer's exact
+wording. One network request, eight regenerations, indefinitely stale.
+
+The control rules out the alternatives: same route revalidate, same query, same
+environment, and it tracked the publish in 5.4s. The variable is the fetch TTL.
+
+### Why this explains the whole ticket
+
+| Reported | Accounted for by |
+|---|---|
+| External requests always fresh, internal intermittently stale | The Data Cache is inside the Node process, not on the network path. External traffic cannot traverse it. The asymmetry needs no second network path. |
+| Survives portal, object cache, CDN and Varnish purges | None of those touch `.next/cache`. |
+| A *clean* rebuild fixes it; ordinary rebuilds do not | Clean rebuild discards `.next/cache`; incremental builds restore it. |
+| `max-age=3600` yet content from two weeks prior | That header governs HTTP caches. The Data Cache honours `next.revalidate`, not `Cache-Control`. |
+| Intermittent night to night | No `@wpengine/atlas-next`, so each replica keeps its own `.next/cache`; the answer depends on which replica serves and how long it has been up. |
+| Sep 3: the fetch reached PHP and answered fresh, yet the build shipped stale | The logged request is probably not the one that fed the render. Consistent with `/contact/` coming from a restored route-cache entry rather than a fresh render. |
+
+`x-nextjs-cache: HIT` is also being used as corroboration in that thread. Per
+§3.5 it is not a freshness signal and cannot carry that weight.
+
+### Caveat before relaying
+
+The customer's point 2 cites `__NEXT_DATA__`, which is Pages Router. If that is
+accurate then the App Router Data Cache is not the mechanism, and the likely
+culprit becomes a module-level Apollo `InMemoryCache` under the default
+`cache-first` policy — a long-lived client in a long-lived process, which
+produces the identical "regenerated, nothing reached PHP" signature for the
+same structural reason. **Confirm which router before asserting a cause.** The
+conclusion that survives either way is that the staleness is in-process, not on
+the wire.
+
+### What to ask them for
+
+- Which router, and the `fetch`/Apollo cache options on the form query.
+- Whether builds are incremental or clean (the Aug 27 result implies incremental).
+- A `revalidate` on the form fetch no longer than the route's, which is the fix
+  if this is the Data Cache.
