@@ -426,3 +426,25 @@ the wire.
 - Whether builds are incremental or clean (the Aug 27 result implies incremental).
 - A `revalidate` on the form fetch no longer than the route's, which is the fix
   if this is the Data Cache.
+
+### 7.1 On-demand revalidation overrides a long fetch TTL
+
+Follow-up to §7, because it decides whether the drift in §7 is a trap or a
+nuisance: does an explicit purge rescue a route whose Data Cache entry is
+effectively immortal, or is the entry unreachable until the TTL lapses?
+
+`/dcsplit` (fetch revalidate: 1 year) after `revalidatePath('/dcsplit')` from a
+Route Handler:
+
+```
+before   modified 2026-09-18T16:29:36   upstream 17:01:40   (frozen for hours)
+publish  modified 2026-09-18T19:39:25
+after    modified 2026-09-18T19:39:25   upstream 19:39:39   (a request went out)
+```
+
+`upstreamDate` moving is the proof: the fetch left the process rather than
+being replayed. So **on-demand revalidation invalidates the Data Cache entry
+regardless of its remaining TTL**, and the §7 failure is specifically a
+*time-based* one. A publish hook wired to `revalidatePath`/`revalidateTag`
+would not have produced that ticket at all.
+
