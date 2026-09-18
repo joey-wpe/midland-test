@@ -38,6 +38,11 @@ const WINDOW_S = Number(process.env.WINDOW ?? 90);
 const OUT = process.env.OUT ?? "results/atlas-raw.json";
 const ONLY = process.env.ONLY ? new Set(process.env.ONLY.split(",").map((s) => s.trim())) : null;
 
+// The secret may contain spaces or other query-hostile characters, so it must be
+// percent-encoded at the call site. redact() still matches on the RAW value, so
+// encode only when building URLs.
+const QS = encodeURIComponent;
+
 const WP_GRAPHQL_URL =
   process.env.WP_GRAPHQL_URL ?? "https://headlessblogw1.wpenginepowered.com/graphql";
 const WP_REST = WP_GRAPHQL_URL.replace(/\/graphql\/?$/, "") + "/wp-json/wp/v2";
@@ -47,16 +52,33 @@ if (!BASE || !SECRET) {
   process.exit(1);
 }
 
-const redact = (s) => s.replaceAll(SECRET, "<secret>");
+const redact = (s) => s.replaceAll(SECRET, "<secret>").replaceAll(encodeURIComponent(SECRET), "<secret>");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const log = (...a) => console.log(...a.map((x) => (typeof x === "string" ? redact(x) : x)));
 
 /* ------------------------------------------------------------------ probes */
 
-/** One GET of a page, with the probe JSON parsed out of the HTML. */
-async function sample(path) {
+/**
+ * One GET of a page, with the probe JSON parsed out of the HTML.
+ *
+ * `bust` appends a unique query param. Atlas fronts the app with Cloudflare,
+ * and the pages come back `s-maxage=3600, stale-while-revalidate=31532400` —
+ * an edge that will happily serve stale for a year while it revalidates. A
+ * plain GET therefore measures Cloudflare, not Next, and would report "still
+ * stale" long after the origin went fresh.
+ *
+ * A unique query string is a distinct Cloudflare cache key (forcing a MISS and
+ * a trip to origin) but does NOT change the Next route cache key for a static
+ * App Router route, which ignores searchParams. So busted samples read the
+ * origin's cache state and unbusted samples read what a real user would see.
+ * Both matter and they answer different questions.
+ */
+async function sample(path, bust = false) {
   const startedAt = Date.now();
-  const res = await fetch(`${BASE}${path}`, {
+  const url = bust
+    ? `${BASE}${path}?cb=${Date.now()}-${Math.random().toString(36).slice(2, 8)}`
+    : `${BASE}${path}`;
+  const res = await fetch(url, {
     headers: { "user-agent": "atlas-revalidate-harness" },
     cache: "no-store",
   });
@@ -80,6 +102,7 @@ async function sample(path) {
   }
   return {
     path,
+    bust,
     status: res.status,
     ms: Date.now() - startedAt,
     at: new Date().toISOString(),
@@ -97,9 +120,17 @@ async function sample(path) {
   };
 }
 
-/** SAMPLES sequential-ish GETs of one path, run concurrently to catch replicas. */
+/**
+ * One measurement round: SAMPLES origin-truth samples (edge bypassed) plus a
+ * handful of plain samples showing what a real visitor gets. Concurrent, so a
+ * multi-replica fleet is actually spread across.
+ */
 async function round(path) {
-  return Promise.all(Array.from({ length: SAMPLES }, () => sample(path)));
+  const [origin, edge] = await Promise.all([
+    Promise.all(Array.from({ length: SAMPLES }, () => sample(path, true))),
+    Promise.all(Array.from({ length: 4 }, () => sample(path, false))),
+  ]);
+  return { origin, edge };
 }
 
 /**
@@ -123,6 +154,8 @@ function summarise(samples) {
     // The headline: more than one content version alive at once means clients
     // are getting different answers depending on which replica they land on.
     diverged: versions.size > 1,
+    cfStatuses: [...new Set(samples.map((s) => s.headers["cf-cache-status"]))],
+    nextCacheStatuses: [...new Set(samples.map((s) => s.headers["x-nextjs-cache"]))],
   };
 }
 
@@ -180,12 +213,22 @@ async function publish() {
   return out;
 }
 
-async function purge(url) {
-  const startedAt = new Date().toISOString();
-  const res = await fetch(url, { method: "POST", cache: "no-store" });
-  const body = await res.json().catch(() => null);
-  log(`  purge ${redact(url)} -> ${res.status} instance=${body?.instance?.id ?? "?"}`);
-  return { url: redact(url), status: res.status, startedAt, finishedAt: new Date().toISOString(), body };
+/**
+ * A cell's purge may be a sequence. Ordering is load-bearing: purging the edge
+ * while the origin is still stale simply re-caches the stale copy, so the only
+ * sequence that actually reaches a visitor is revalidate-then-purge.
+ */
+async function purge(urls) {
+  const steps = [];
+  for (const url of [urls].flat()) {
+    const startedAt = new Date().toISOString();
+    const res = await fetch(url, { method: "POST", cache: "no-store" });
+    const body = await res.json().catch(() => null);
+    log(`  purge ${redact(url)} -> ${res.status} instance=${body?.instance?.id ?? "?"} ok=${body?.ok}`);
+    steps.push({ url: redact(url), status: res.status, startedAt, finishedAt: new Date().toISOString(), body });
+  }
+  // Keep the single-step shape for the summary printer.
+  return steps.length === 1 ? steps[0] : { steps, ok: steps.every((x) => x.body?.ok), body: { ok: steps.every((x) => x.body?.ok) } };
 }
 
 /**
@@ -197,17 +240,21 @@ async function converge(path, expectedVersion) {
   const rounds = [];
   let firstFreshMs = null;
   let allFreshMs = null;
+  let edgeAllFreshMs = null;
   const t0 = Date.now();
   while (Date.now() < deadline) {
-    const samples = await round(path);
-    const s = summarise(samples);
-    const fresh = samples.filter((x) => x.probe?.modifiedGmt === expectedVersion).length;
+    const { origin, edge } = await round(path);
+    const s = summarise(origin);
+    const e = summarise(edge);
+    const fresh = origin.filter((x) => x.probe?.modifiedGmt === expectedVersion).length;
+    const edgeFresh = edge.filter((x) => x.probe?.modifiedGmt === expectedVersion).length;
     const elapsed = Date.now() - t0;
     if (fresh > 0 && firstFreshMs === null) firstFreshMs = elapsed;
-    if (fresh === samples.length && allFreshMs === null) allFreshMs = elapsed;
-    rounds.push({ elapsedMs: elapsed, freshCount: fresh, ...s, samples });
-    log(`    +${(elapsed / 1000).toFixed(0)}s ${path} fresh=${fresh}/${samples.length} versions=${s.distinctVersions.length} diverged=${s.diverged}`);
-    if (allFreshMs !== null) break;
+    if (fresh === origin.length && allFreshMs === null) allFreshMs = elapsed;
+    if (edgeFresh === edge.length && edgeAllFreshMs === null) edgeAllFreshMs = elapsed;
+    rounds.push({ elapsedMs: elapsed, freshCount: fresh, edgeFreshCount: edgeFresh, ...s, edge: e, samples: origin, edgeSamples: edge });
+    log(`    +${(elapsed / 1000).toFixed(0)}s ${path} origin=${fresh}/${origin.length} edge=${edgeFresh}/${edge.length} versions=${s.distinctVersions.length} diverged=${s.diverged}`);
+    if (allFreshMs !== null && edgeAllFreshMs !== null) break;
     await sleep(5000);
   }
   return {
@@ -216,6 +263,10 @@ async function converge(path, expectedVersion) {
     firstFreshMs,
     allFreshMs,
     convergedWithinWindow: allFreshMs !== null,
+    // Origin fresh but edge stale is its own failure, and the one the customer's
+    // visitors actually experience.
+    edgeAllFreshMs,
+    edgeConvergedWithinWindow: edgeAllFreshMs !== null,
     // A round that saw two versions at once is the smoking gun, and it is worth
     // surfacing even if the fleet eventually converged.
     everDiverged: rounds.some((r) => r.diverged),
@@ -231,15 +282,20 @@ async function converge(path, expectedVersion) {
  * mechanism, then watch the fleet converge.
  */
 const CELLS = [
-  { id: "res-revalidate", route: "/a", purge: (p) => `${BASE}/api/revalidate?secret=${SECRET}&path=${p}`,
+  { id: "res-revalidate", route: "/a", purge: (p) => `${BASE}/api/revalidate?secret=${QS(SECRET)}&path=${QS(p)}`,
     note: "res.revalidate() from pages/api against an App Router path — the mechanism under test." },
-  { id: "pages-revalidate-path", route: "/c", purge: (p) => `${BASE}/api/revalidate-path?secret=${SECRET}&path=${p}`,
+  { id: "pages-revalidate-path", route: "/c", purge: (p) => `${BASE}/api/revalidate-path?secret=${QS(SECRET)}&path=${QS(p)}`,
     note: "revalidatePath from pages/api. Expected to throw E263 (no work store)." },
-  { id: "app-revalidate-path", route: "/rh", purge: (p) => `${BASE}/api/app-revalidate-path?secret=${SECRET}&path=${p}`,
+  { id: "app-revalidate-path", route: "/rh", purge: (p) => `${BASE}/api/app-revalidate-path?secret=${QS(SECRET)}&path=${QS(p)}`,
     note: "revalidatePath from an App Router Route Handler — settles RESULTS.md §8." },
-  { id: "app-revalidate-tag", route: "/rt", purge: () => `${BASE}/api/app-revalidate-tag?secret=${SECRET}&tag=rt-content`,
+  { id: "app-revalidate-tag", route: "/rt", purge: () => `${BASE}/api/app-revalidate-tag?secret=${QS(SECRET)}&tag=rt-content`,
     note: "revalidateTag from a Route Handler. atlas-next's handler appears not to forward tags to KV." },
-  { id: "edge-purge", route: "/e", purge: (p) => `${BASE}/api/purge-edge?secret=${SECRET}&paths=${p}`,
+  { id: "revalidate-then-purge", route: "/a", purge: (p) => [
+      `${BASE}/api/revalidate?secret=${QS(SECRET)}&path=${QS(p)}`,
+      `${BASE}/api/purge-edge?secret=${QS(SECRET)}&paths=${QS(p)}`,
+    ],
+    note: "The production sequence: revalidate the origin, THEN purge the edge. The only combination that reaches a real visitor." },
+  { id: "edge-purge", route: "/e", purge: (p) => `${BASE}/api/purge-edge?secret=${QS(SECRET)}&paths=${QS(p)}`,
     note: "@wpengine/edge-cache purgePaths — the layer res.revalidate never touches." },
 ];
 
@@ -256,7 +312,8 @@ async function main() {
     log(`\n[${cell.id}] ${cell.note}`);
 
     log(`  baseline ${cell.route}`);
-    const baseline = await round(cell.route);
+    const baselineRound = await round(cell.route);
+    const baseline = baselineRound.origin;
     const baseSummary = summarise(baseline);
     log(`  baseline versions=${JSON.stringify(baseSummary.distinctVersions)} replicas=${baseSummary.distinctRenderingInstances.length}`);
 
@@ -268,7 +325,7 @@ async function main() {
     log(`  expected version: ${expected}`);
 
     log(`  confirming still stale before purge`);
-    const preStale = summarise(await round(cell.route));
+    const preStale = summarise((await round(cell.route)).origin);
     const wasStale = !preStale.distinctVersions.includes(expected);
     log(`  still stale: ${wasStale}${wasStale ? "" : "  <-- cache did not hold; cell is inconclusive"}`);
 
@@ -299,8 +356,8 @@ async function main() {
     const purgeOk = c.purge.body?.ok;
     log(
       `${id}: purge.ok=${purgeOk} stale-before=${c.preStale.wasStale} ` +
-        `first-fresh=${c.convergence.firstFreshMs ?? "never"}ms ` +
-        `all-fresh=${c.convergence.allFreshMs ?? "NEVER"}ms ` +
+        `origin-all-fresh=${c.convergence.allFreshMs ?? "NEVER"}ms ` +
+        `edge-all-fresh=${c.convergence.edgeAllFreshMs ?? "NEVER"}ms ` +
         `diverged=${c.convergence.everDiverged}`
     );
     if (!purgeOk) log(`  purge error: ${JSON.stringify(c.purge.body?.error)?.slice(0, 200)}`);
