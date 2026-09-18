@@ -58,7 +58,11 @@ export async function fetchProbe(
       slug: node?.slug ?? null,
       databaseId: node?.databaseId ?? null,
       upstreamDate: res.headers.get("date"),
-      graphqlKeysHash: res.headers.get("x-graphql-keys-hash") ?? res.headers.get("etag"),
+      // WPGraphQL Smart Cache emits `x-graphql-keys` (the earlier
+      // `x-graphql-keys-hash` guess was simply the wrong header name, which is
+      // why this read null on every sample in the first Atlas run).
+      graphqlKeysHash:
+        res.headers.get("x-graphql-keys") ?? res.headers.get("etag"),
       fetchedAt,
       error: json?.errors ? JSON.stringify(json.errors).slice(0, 300) : null,
     };
