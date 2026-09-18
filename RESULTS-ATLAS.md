@@ -1,9 +1,11 @@
 # Atlas run results
 
-Run date: 2026-09-18.
-Environment: `h1zqz5eo211ukydaab4lzvbse.js.wpenginepowered.com`, build `74493237-faf3-b3b7-0f8f-10a122072baa`.
+Run date: 2026-09-18 (two passes: single-replica, then scaled to 7).
+Environment: `h1zqz5eo211ukydaab4lzvbse.js.wpenginepowered.com`
+(builds `74493237-...` single-replica, `559e3268-...` scaled).
 Backend: `headlessblogw1.wpenginepowered.com` (WPGraphQL, POST).
-Raw data: `results/atlas-raw.json`, `results/atlas-combined.json`.
+Raw data: `results/atlas-raw.json`, `results/atlas-combined.json`,
+`results/atlas-multireplica.json`.
 
 ---
 
@@ -17,6 +19,10 @@ origin while real visitors kept getting a version up to an hour old.
 
 **Revalidation alone is not enough on Atlas. It must be paired with an explicit
 edge purge, in that order.** That combination refreshed both layers in 302ms.
+
+Separately, and contrary to the assumption this app was built on: **the ISR
+store IS shared across replicas** on this environment. Scaled to 7 pods, a
+purge on one pod updated what all seven served, in under a second. See §4.
 
 ## 2. The matrix
 
@@ -88,8 +94,12 @@ same job natively, with `revalidateTag` available too, which `res.revalidate`
 cannot offer. The Pages Router endpoint remains a valid option; it is no longer
 the only one.
 
-Caveat: single replica. `revalidateTag` not propagating across replicas
-(§11c finding 3) is untested and unaffected by this result.
+Caveat: `revalidateTag` cross-replica propagation is still untested. §4 shows
+the *page* store is shared, but `../atlas-revalidate-test/RESULTS.md` §11c
+finding 3 shows the handler's `revalidateTag` delegates only to the local
+filesystem cache. Those are different code paths and the tag one was only
+exercised single-replica here. Treat tag-based invalidation as unproven on a
+scaled fleet.
 
 ### 3.4 The KV store env vars *are* present — correcting the record again
 
@@ -106,18 +116,18 @@ environment. `rolloutPercent` unset means the default of 100 applies, so
 path is live — not dormant.
 
 This does not square with "there is no shared KV store, confirmed by
-engineering," and I want to be careful about what it does and doesn't show.
-It shows the **env vars are provisioned and the code path is reachable**. It
-does **not** show that the store is shared across replicas, because this
-environment only ever presented one replica — there was nothing to share with.
-Both statements can be true if the store is per-environment rather than
-cross-replica, or if it is provisioned but unused for App Router entries (which
-are written with an empty `nextRevalidateMethod`, consistent with the
-Pages-Router-only theory).
+engineering." When written, this section could only show that the env vars were
+provisioned and the code path reachable — not that anything was actually shared,
+since only one replica existed.
 
-Worth putting back to engineering as a specific question rather than a general
-one: *these two env vars are set on this environment — what backs them, and is
-that storage shared between replicas of the same environment?*
+**§4 closes that gap: the store is demonstrably shared across replicas.** Pods
+serve renders produced by other pods, which is only possible via shared storage.
+So the KV path is not merely reachable, it is doing real work.
+
+The question for engineering is therefore narrower and more useful than "is
+there a shared store": *these vars are provisioned on this environment and the
+store is observably shared — which environments get one, what backs it, and
+what determines whether a given customer environment has it?*
 
 ### 3.5 `x-nextjs-cache` is still not a freshness signal
 
@@ -126,20 +136,67 @@ Busted requests to a route that had just been revalidated returned
 requests returned `REVALIDATED` while serving a nine-minute-old copy from
 Cloudflare. Matches the local finding. Do not diagnose with this header.
 
-## 4. What this run could NOT answer
+## 4. Replica divergence — ANSWERED, and not the way we expected
 
-**The replica divergence question — the reason this app was built — is still
-open.** Thirty consecutive `/api/whoami` calls returned the same pod
-(`...-6d89758f87-c8nkt`, pid 17). One replica.
+The first pass ran on a single replica and could not test this. A second pass
+forced the environment to scale out, and the result reverses the working
+assumption.
 
-With a single replica there is nothing to diverge, so `diverged=false` on every
-cell is a **property of the test environment, not a finding about Atlas.** It
-must not be read as "cache state is consistent across replicas."
+**The ISR store IS shared across replicas on this environment.**
 
-To answer it, the environment needs to be scaled to more than one instance —
-then re-run `node scripts/run-atlas-matrix.mjs` unchanged and read
-`everDiverged` and `allFreshMs`. The harness is built for it; it just needs a
-fleet to measure.
+### How the fleet was scaled
+
+Atlas autoscales on in-flight concurrency, not request count, so volume alone
+does nothing — cached pages return in milliseconds and never hold a connection.
+Holding 40 concurrent requests against `/api/load` (a sleep endpoint added for
+exactly this, so WordPress takes no load) scaled the environment from 1 to
+**7 pods**, which stayed up for the duration of the run.
+
+### The evidence
+
+Every page embeds the instance that *rendered* it. If a pod serves HTML stamped
+with a different pod's ID, it did not produce that HTML — it read it from
+somewhere shared.
+
+| Cell | Purge landed on | Renderers seen across 20 concurrent samples |
+|---|---|---|
+| baseline (before any purge) | — | **6 distinct** — each pod had its own copy |
+| `res-revalidate` | `3f1844a9` | **1: `3f1844a9`** |
+| `app-revalidate-path` | `758d906b` | +0s: 2 (`3f1844a9`, `758d906b`) → +6s: **1: `758d906b`** |
+| `revalidate-then-purge` | `979a3828` | **1: `979a3828`** |
+
+The baseline is the control and it matters: before any purge, 20 samples of the
+same route returned **six different renderers**, proving the load balancer really
+does spread requests and the harness can tell the pods apart. After a purge,
+those same 20 samples all returned the render produced by *the single pod that
+handled the purge call*. Five other pods served a render they never performed.
+
+A dedicated propagation measurement (publish → `res.revalidate` → 10 concurrent
+cache-busted samples every 400ms) found the fleet fully consistent on the
+**first sample at +950ms**, all ten showing the purging pod's render.
+
+### What this means
+
+- `res.revalidate()` on one replica **does** update what every other replica
+  serves, within roughly a second.
+- This contradicts the premise the harness was built around ("the cache is not
+  persistent through other replicas") and the "no shared KV store" answer from
+  engineering. It is consistent with §3.4: `HEADLESS_KV_STORE_URL` and
+  `HEADLESS_KV_STORE_TOKEN` are provisioned here and `rolloutPercent` is unset,
+  so the remote cache handler runs at 100%.
+- The `app-revalidate-path` cell caught a genuine but brief inconsistency
+  window: two versions alive simultaneously at +0s, resolved by +6s. So
+  divergence exists, but as a sub-second-to-few-second propagation window, not
+  as the indefinite per-replica staleness that was feared.
+
+### Scope — read before relaying
+
+This is one environment, observed on one day, with the KV env vars present. It
+does **not** establish that every Atlas environment behaves this way; an
+environment without those vars provisioned would fall through to the per-replica
+filesystem cache and the original concern would apply in full. The right
+question for the platform team is no longer "is there a shared store" but
+**"which environments get one, and what determines that."**
 
 ## 5. Recommendation
 
@@ -150,18 +207,20 @@ On this evidence, for an App Router route on Atlas:
 2. **An App Router Route Handler is sufficient** for the revalidation step —
    the `pages/api` endpoint is optional, not required (§3.3).
 3. **Do not rely on `x-nextjs-cache`** when debugging this with the customer.
-4. **Do not extrapolate any of this to a multi-replica environment** until §4 is
-   resolved. If the ISR store is per-replica, revalidation fixes one instance
-   and the edge purge then has a chance of re-caching stale content pulled from
-   a different, still-stale replica. That failure mode would be intermittent and
-   would look exactly like a flaky CDN.
+4. **Multi-replica is fine on this environment** (§4). Verified at 7 pods: the
+   ISR store is shared and propagates in under a second. The edge purge is not
+   at risk of re-caching from a stale replica here. Do not generalise this to
+   environments where the KV vars are not provisioned.
 
-Item 4 is the one I would put to the Headless Platform team first, together with
-the §3.4 question.
+The remaining question for the Headless Platform team is §4's scope one —
+which environments get a shared store and what determines it — which replaces
+the §3.4 question rather than adding to it.
 
 ## 6. Scope limits
 
-- Single replica; see §4.
+- Two passes: the §2 matrix ran on a single replica (build `74493237`); §4 ran
+  on 6–7 replicas (build `559e3268`) after forcing scale-out. The §2 timings are
+  single-replica numbers; the §4 conclusions are the multi-replica ones.
 - Next 16.3.5, `cacheComponents` off. Confirm the customer's version before
   relaying — the writeup assumes 16.3.
 - `@wpengine/edge-cache` is rate limited (~300 ops/hour). A high-frequency
