@@ -94,12 +94,8 @@ same job natively, with `revalidateTag` available too, which `res.revalidate`
 cannot offer. The Pages Router endpoint remains a valid option; it is no longer
 the only one.
 
-Caveat: `revalidateTag` cross-replica propagation is still untested. §4 shows
-the *page* store is shared, but `../atlas-revalidate-test/RESULTS.md` §11c
-finding 3 shows the handler's `revalidateTag` delegates only to the local
-filesystem cache. Those are different code paths and the tag one was only
-exercised single-replica here. Treat tag-based invalidation as unproven on a
-scaled fleet.
+~~Caveat: `revalidateTag` cross-replica propagation is still untested.~~
+**Resolved — see §4b. Tags propagate across the fleet, as fast as paths.**
 
 ### 3.4 The KV store env vars *are* present — correcting the record again
 
@@ -198,6 +194,70 @@ filesystem cache and the original concern would apply in full. The right
 question for the platform team is no longer "is there a shared store" but
 **"which environments get one, and what determines that."**
 
+## 4b. `revalidateTag` across replicas — it propagates
+
+Run: build `1ce79ef4` (revision `00009`), 7 pods, 16 concurrent cache-busted
+samples per round at 600ms. Raw: `results/tag-propagation.json`.
+Script: `scripts/run-tag-propagation.mjs`.
+
+§4 proved the *page* store is shared but left tags open, because the handler's
+`revalidateTag` delegates only to the local filesystem cache — a different code
+path, and only ever exercised single-replica. It mattered: tag invalidation is
+the granular mechanism the AUSL recommendation builds an external Redis key
+namespace to obtain.
+
+### Method changes that make this conclusive
+
+1. **`x-serving-instance`** (`middleware.ts`, Node runtime). §4 *inferred*
+   sharing from rendering-pod IDs collapsing to one. The serving pod is now
+   named outright, so "pod B returned pod A's render" is read off a single
+   sample.
+2. **A control arm.** `/rh` purged with `revalidatePath` on the same fleet,
+   seconds later. Same storage, same LB, same pods — so any difference is
+   attributable to the tag path and nothing else.
+
+### Result
+
+| Arm | Mechanism | Purge pod | Still stale first | First fresh | First fresh **on another pod** | All 16 fresh |
+|---|---|---|---|---|---|---|
+| `tag` | `revalidateTag('rt-content')` | `71d49079` | yes (0/16) | 699ms | **1433ms** | **1433ms** |
+| `path` | `revalidatePath('/rh')` (control) | `5c238786` | yes (0/16) | 835ms | 1569ms | 1569ms |
+
+**Tags propagate, and if anything slightly faster than paths.** The gap is
+within run-to-run noise; the finding is that they are equivalent, not that tags
+are quicker.
+
+The direct evidence, from the final tag round — four different serving pods
+returning a render produced by the purging pod, at the *same millisecond*:
+
+```
+served by 5c238786 | rendered by 71d49079 | renderedAt 16:25:20.456Z
+served by eeb0fb1c | rendered by 71d49079 | renderedAt 16:25:20.456Z
+served by 2ec6bd0a | rendered by 71d49079 | renderedAt 16:25:20.456Z
+served by 02dbc410 | rendered by 71d49079 | renderedAt 16:25:20.456Z
+```
+
+One render event, read by the whole fleet. Six distinct non-purging pods served
+the fresh version.
+
+### The baseline is a finding in its own right
+
+Before either purge: **6 distinct rendering pods, and `crossPodServes` 0/16.**
+Every pod served a render it had performed itself.
+
+So sharing is not "all pods always read one entry." On the initial cold fill
+each pod renders and keeps its own copy; the shared store asserts itself *after
+an invalidation*, when the fleet converges on one regenerated entry. That
+distinction matters when relaying this — it partially supports the AUSL doc's
+first claim (cold replicas fill their caches independently) while contradicting
+its second (invalidation reaching only one replica).
+
+### Scope
+
+Same limits as §4: one environment, one day, KV vars present. This shows tag
+invalidation is **not weaker than** path invalidation here; it does not show
+either works where the KV store is absent.
+
 ## 5. Recommendation
 
 On this evidence, for an App Router route on Atlas:
@@ -205,7 +265,9 @@ On this evidence, for an App Router route on Atlas:
 1. **Revalidate, then purge the edge.** Either mechanism alone leaves visitors
    on stale content. Both, in order, refresh everything in ~300ms.
 2. **An App Router Route Handler is sufficient** for the revalidation step —
-   the `pages/api` endpoint is optional, not required (§3.3).
+   the `pages/api` endpoint is optional, not required (§3.3). `revalidateTag`
+   is available there and propagates fleet-wide (§4b), so invalidation can be
+   keyed to content rather than to routes.
 3. **Do not rely on `x-nextjs-cache`** when debugging this with the customer.
 4. **Multi-replica is fine on this environment** (§4). Verified at 7 pods: the
    ISR store is shared and propagates in under a second. The edge purge is not

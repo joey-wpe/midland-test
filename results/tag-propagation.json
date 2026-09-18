@@ -1,0 +1,1220 @@
+{
+  "startedAt": "2026-09-18T16:25:12.807Z",
+  "base": "https://h1zqz5eo211ukydaab4lzvbse.js.wpenginepowered.com",
+  "samples": 16,
+  "pollMs": 600,
+  "arms": [
+    {
+      "id": "tag",
+      "path": "/rt",
+      "mechanism": "revalidateTag('rt-content') from an App Router Route Handler",
+      "baseline": {
+        "n": 16,
+        "errors": 0,
+        "servingPods": [
+          "2ec6bd0a",
+          "d5c04b0e",
+          "02dbc410",
+          "8fa97c5a",
+          "5c238786",
+          "eeb0fb1c"
+        ],
+        "renderingPods": [
+          "2ec6bd0a",
+          "d5c04b0e",
+          "02dbc410",
+          "8fa97c5a",
+          "5c238786",
+          "eeb0fb1c"
+        ],
+        "distinctVersions": [
+          "2026-09-18T15:48:04"
+        ],
+        "diverged": false,
+        "freshCount": 0,
+        "crossPodServes": 0,
+        "freshOnNonPurgingPods": [],
+        "nextCacheStatuses": [
+          "REVALIDATED",
+          "HIT"
+        ]
+      },
+      "published": {
+        "mode": "rest",
+        "status": 200,
+        "modifiedGmt": "2026-09-18T16:25:16"
+      },
+      "preCheck": {
+        "n": 16,
+        "errors": 0,
+        "servingPods": [
+          "eeb0fb1c",
+          "5c238786",
+          "2ec6bd0a",
+          "02dbc410",
+          "d5c04b0e",
+          "8fa97c5a",
+          "71d49079"
+        ],
+        "renderingPods": [
+          "2ec6bd0a"
+        ],
+        "distinctVersions": [
+          "2026-09-18T15:48:04"
+        ],
+        "diverged": false,
+        "freshCount": 0,
+        "crossPodServes": 13,
+        "freshOnNonPurgingPods": [],
+        "nextCacheStatuses": [
+          "HIT"
+        ]
+      },
+      "stillStale": true,
+      "purge": {
+        "url": "https://h1zqz5eo211ukydaab4lzvbse.js.wpenginepowered.com/api/app-revalidate-tag?tag=rt-content&secret=<secret>",
+        "status": 200,
+        "pod": "71d49079",
+        "body": {
+          "ok": true,
+          "router": "app",
+          "method": "revalidateTag",
+          "tag": "rt-content",
+          "instance": {
+            "id": "71d49079",
+            "host": "h1zqz5eo211ukydaab4lzvbse-00009-deployment-85cb44cb98-n8nk7",
+            "pid": 18,
+            "bootedAt": "2026-09-18T16:24:49.355Z"
+          },
+          "at": "2026-09-18T16:25:20.020Z"
+        },
+        "at": "2026-09-18T16:25:20.004Z"
+      },
+      "firstFreshMs": 699,
+      "firstFreshOnOtherPodMs": 1433,
+      "allFreshMs": 1433,
+      "rounds": [
+        {
+          "elapsedMs": 699,
+          "n": 16,
+          "errors": 0,
+          "servingPods": [
+            "8fa97c5a",
+            "02dbc410",
+            "71d49079",
+            "5c238786",
+            "d5c04b0e",
+            "2ec6bd0a"
+          ],
+          "renderingPods": [
+            "2ec6bd0a",
+            "71d49079"
+          ],
+          "distinctVersions": [
+            "2026-09-18T15:48:04",
+            "2026-09-18T16:25:16"
+          ],
+          "diverged": true,
+          "freshCount": 4,
+          "crossPodServes": 11,
+          "freshOnNonPurgingPods": [],
+          "nextCacheStatuses": [
+            "HIT",
+            "REVALIDATED"
+          ],
+          "samples": [
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 124,
+              "at": "2026-09-18T16:25:20.129Z",
+              "serving": "8fa97c5a",
+              "rendering": "2ec6bd0a",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T15:48:04",
+              "renderedAt": "2026-09-18T16:25:16.157Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 125,
+              "at": "2026-09-18T16:25:20.130Z",
+              "serving": "02dbc410",
+              "rendering": "2ec6bd0a",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T15:48:04",
+              "renderedAt": "2026-09-18T16:25:16.157Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 112,
+              "at": "2026-09-18T16:25:20.118Z",
+              "serving": "02dbc410",
+              "rendering": "2ec6bd0a",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T15:48:04",
+              "renderedAt": "2026-09-18T16:25:16.157Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 586,
+              "at": "2026-09-18T16:25:20.592Z",
+              "serving": "71d49079",
+              "rendering": "71d49079",
+              "servedOthersRender": false,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:20.456Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 124,
+              "at": "2026-09-18T16:25:20.130Z",
+              "serving": "5c238786",
+              "rendering": "2ec6bd0a",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T15:48:04",
+              "renderedAt": "2026-09-18T16:25:16.157Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 587,
+              "at": "2026-09-18T16:25:20.594Z",
+              "serving": "71d49079",
+              "rendering": "71d49079",
+              "servedOthersRender": false,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:20.456Z",
+              "nextCache": "REVALIDATED",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 124,
+              "at": "2026-09-18T16:25:20.131Z",
+              "serving": "5c238786",
+              "rendering": "2ec6bd0a",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T15:48:04",
+              "renderedAt": "2026-09-18T16:25:16.157Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 122,
+              "at": "2026-09-18T16:25:20.129Z",
+              "serving": "02dbc410",
+              "rendering": "2ec6bd0a",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T15:48:04",
+              "renderedAt": "2026-09-18T16:25:16.157Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 124,
+              "at": "2026-09-18T16:25:20.131Z",
+              "serving": "5c238786",
+              "rendering": "2ec6bd0a",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T15:48:04",
+              "renderedAt": "2026-09-18T16:25:16.157Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 123,
+              "at": "2026-09-18T16:25:20.130Z",
+              "serving": "d5c04b0e",
+              "rendering": "2ec6bd0a",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T15:48:04",
+              "renderedAt": "2026-09-18T16:25:16.157Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 584,
+              "at": "2026-09-18T16:25:20.592Z",
+              "serving": "71d49079",
+              "rendering": "71d49079",
+              "servedOthersRender": false,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:20.456Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 584,
+              "at": "2026-09-18T16:25:20.592Z",
+              "serving": "71d49079",
+              "rendering": "71d49079",
+              "servedOthersRender": false,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:20.456Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 110,
+              "at": "2026-09-18T16:25:20.118Z",
+              "serving": "02dbc410",
+              "rendering": "2ec6bd0a",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T15:48:04",
+              "renderedAt": "2026-09-18T16:25:16.157Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 121,
+              "at": "2026-09-18T16:25:20.129Z",
+              "serving": "d5c04b0e",
+              "rendering": "2ec6bd0a",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T15:48:04",
+              "renderedAt": "2026-09-18T16:25:16.157Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 110,
+              "at": "2026-09-18T16:25:20.118Z",
+              "serving": "02dbc410",
+              "rendering": "2ec6bd0a",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T15:48:04",
+              "renderedAt": "2026-09-18T16:25:16.157Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 122,
+              "at": "2026-09-18T16:25:20.130Z",
+              "serving": "2ec6bd0a",
+              "rendering": "2ec6bd0a",
+              "servedOthersRender": false,
+              "modifiedGmt": "2026-09-18T15:48:04",
+              "renderedAt": "2026-09-18T16:25:16.157Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            }
+          ]
+        },
+        {
+          "elapsedMs": 1433,
+          "n": 16,
+          "errors": 0,
+          "servingPods": [
+            "5c238786",
+            "eeb0fb1c",
+            "2ec6bd0a",
+            "02dbc410",
+            "71d49079",
+            "8fa97c5a",
+            "d5c04b0e"
+          ],
+          "renderingPods": [
+            "71d49079"
+          ],
+          "distinctVersions": [
+            "2026-09-18T16:25:16"
+          ],
+          "diverged": false,
+          "freshCount": 16,
+          "crossPodServes": 15,
+          "freshOnNonPurgingPods": [
+            "5c238786",
+            "eeb0fb1c",
+            "2ec6bd0a",
+            "02dbc410",
+            "8fa97c5a",
+            "d5c04b0e"
+          ],
+          "nextCacheStatuses": [
+            "HIT"
+          ],
+          "samples": [
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 127,
+              "at": "2026-09-18T16:25:21.324Z",
+              "serving": "5c238786",
+              "rendering": "71d49079",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:20.456Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 130,
+              "at": "2026-09-18T16:25:21.328Z",
+              "serving": "eeb0fb1c",
+              "rendering": "71d49079",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:20.456Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 113,
+              "at": "2026-09-18T16:25:21.311Z",
+              "serving": "2ec6bd0a",
+              "rendering": "71d49079",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:20.456Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 124,
+              "at": "2026-09-18T16:25:21.323Z",
+              "serving": "02dbc410",
+              "rendering": "71d49079",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:20.456Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 128,
+              "at": "2026-09-18T16:25:21.327Z",
+              "serving": "71d49079",
+              "rendering": "71d49079",
+              "servedOthersRender": false,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:20.456Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 128,
+              "at": "2026-09-18T16:25:21.327Z",
+              "serving": "8fa97c5a",
+              "rendering": "71d49079",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:20.456Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 129,
+              "at": "2026-09-18T16:25:21.329Z",
+              "serving": "8fa97c5a",
+              "rendering": "71d49079",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:20.456Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 129,
+              "at": "2026-09-18T16:25:21.329Z",
+              "serving": "eeb0fb1c",
+              "rendering": "71d49079",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:20.456Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 124,
+              "at": "2026-09-18T16:25:21.324Z",
+              "serving": "d5c04b0e",
+              "rendering": "71d49079",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:20.456Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 129,
+              "at": "2026-09-18T16:25:21.329Z",
+              "serving": "02dbc410",
+              "rendering": "71d49079",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:20.456Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 113,
+              "at": "2026-09-18T16:25:21.314Z",
+              "serving": "5c238786",
+              "rendering": "71d49079",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:20.456Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 110,
+              "at": "2026-09-18T16:25:21.311Z",
+              "serving": "d5c04b0e",
+              "rendering": "71d49079",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:20.456Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 127,
+              "at": "2026-09-18T16:25:21.328Z",
+              "serving": "d5c04b0e",
+              "rendering": "71d49079",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:20.456Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 127,
+              "at": "2026-09-18T16:25:21.328Z",
+              "serving": "02dbc410",
+              "rendering": "71d49079",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:20.456Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 126,
+              "at": "2026-09-18T16:25:21.328Z",
+              "serving": "02dbc410",
+              "rendering": "71d49079",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:20.456Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rt",
+              "status": 200,
+              "ms": 126,
+              "at": "2026-09-18T16:25:21.328Z",
+              "serving": "8fa97c5a",
+              "rendering": "71d49079",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:20.456Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "path",
+      "path": "/rh",
+      "mechanism": "revalidatePath('/rh') from an App Router Route Handler",
+      "baseline": {
+        "n": 16,
+        "errors": 0,
+        "servingPods": [
+          "02dbc410",
+          "5c238786",
+          "8fa97c5a",
+          "eeb0fb1c",
+          "2ec6bd0a",
+          "d5c04b0e"
+        ],
+        "renderingPods": [
+          "02dbc410",
+          "5c238786",
+          "8fa97c5a",
+          "eeb0fb1c",
+          "2ec6bd0a",
+          "d5c04b0e"
+        ],
+        "distinctVersions": [
+          "2026-09-18T16:25:16"
+        ],
+        "diverged": false,
+        "freshCount": 0,
+        "crossPodServes": 0,
+        "freshOnNonPurgingPods": [],
+        "nextCacheStatuses": [
+          "HIT",
+          "REVALIDATED"
+        ]
+      },
+      "published": {
+        "mode": "rest",
+        "status": 200,
+        "modifiedGmt": "2026-09-18T16:25:27"
+      },
+      "preCheck": {
+        "n": 16,
+        "errors": 0,
+        "servingPods": [
+          "71d49079",
+          "2ec6bd0a",
+          "8fa97c5a",
+          "d5c04b0e",
+          "02dbc410",
+          "5c238786",
+          "eeb0fb1c"
+        ],
+        "renderingPods": [
+          "eeb0fb1c"
+        ],
+        "distinctVersions": [
+          "2026-09-18T16:25:16"
+        ],
+        "diverged": false,
+        "freshCount": 0,
+        "crossPodServes": 15,
+        "freshOnNonPurgingPods": [],
+        "nextCacheStatuses": [
+          "HIT"
+        ]
+      },
+      "stillStale": true,
+      "purge": {
+        "url": "https://h1zqz5eo211ukydaab4lzvbse.js.wpenginepowered.com/api/app-revalidate-path?path=%2Frh&secret=<secret>",
+        "status": 200,
+        "pod": "5c238786",
+        "body": {
+          "ok": true,
+          "router": "app",
+          "method": "revalidatePath",
+          "path": "/rh",
+          "instance": {
+            "id": "5c238786",
+            "host": "h1zqz5eo211ukydaab4lzvbse-00009-deployment-85cb44cb98-mzxpl",
+            "pid": 18,
+            "bootedAt": "2026-09-18T16:24:25.717Z"
+          },
+          "at": "2026-09-18T16:25:31.081Z"
+        },
+        "at": "2026-09-18T16:25:31.063Z"
+      },
+      "firstFreshMs": 835,
+      "firstFreshOnOtherPodMs": 1569,
+      "allFreshMs": 1569,
+      "rounds": [
+        {
+          "elapsedMs": 835,
+          "n": 16,
+          "errors": 0,
+          "servingPods": [
+            "eeb0fb1c",
+            "71d49079",
+            "5c238786",
+            "2ec6bd0a",
+            "02dbc410",
+            "d5c04b0e"
+          ],
+          "renderingPods": [
+            "eeb0fb1c",
+            "5c238786"
+          ],
+          "distinctVersions": [
+            "2026-09-18T16:25:16",
+            "2026-09-18T16:25:27"
+          ],
+          "diverged": true,
+          "freshCount": 2,
+          "crossPodServes": 12,
+          "freshOnNonPurgingPods": [],
+          "nextCacheStatuses": [
+            "HIT",
+            "REVALIDATED"
+          ],
+          "samples": [
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 202,
+              "at": "2026-09-18T16:25:31.266Z",
+              "serving": "eeb0fb1c",
+              "rendering": "eeb0fb1c",
+              "servedOthersRender": false,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:22.031Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 99,
+              "at": "2026-09-18T16:25:31.163Z",
+              "serving": "71d49079",
+              "rendering": "eeb0fb1c",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:22.031Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 728,
+              "at": "2026-09-18T16:25:31.792Z",
+              "serving": "5c238786",
+              "rendering": "5c238786",
+              "servedOthersRender": false,
+              "modifiedGmt": "2026-09-18T16:25:27",
+              "renderedAt": "2026-09-18T16:25:31.676Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 99,
+              "at": "2026-09-18T16:25:31.163Z",
+              "serving": "2ec6bd0a",
+              "rendering": "eeb0fb1c",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:22.031Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 99,
+              "at": "2026-09-18T16:25:31.163Z",
+              "serving": "71d49079",
+              "rendering": "eeb0fb1c",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:22.031Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 103,
+              "at": "2026-09-18T16:25:31.167Z",
+              "serving": "02dbc410",
+              "rendering": "eeb0fb1c",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:22.031Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 106,
+              "at": "2026-09-18T16:25:31.171Z",
+              "serving": "02dbc410",
+              "rendering": "eeb0fb1c",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:22.031Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 98,
+              "at": "2026-09-18T16:25:31.163Z",
+              "serving": "71d49079",
+              "rendering": "eeb0fb1c",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:22.031Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 106,
+              "at": "2026-09-18T16:25:31.171Z",
+              "serving": "d5c04b0e",
+              "rendering": "eeb0fb1c",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:22.031Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 89,
+              "at": "2026-09-18T16:25:31.154Z",
+              "serving": "71d49079",
+              "rendering": "eeb0fb1c",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:22.031Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 106,
+              "at": "2026-09-18T16:25:31.171Z",
+              "serving": "d5c04b0e",
+              "rendering": "eeb0fb1c",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:22.031Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 111,
+              "at": "2026-09-18T16:25:31.176Z",
+              "serving": "eeb0fb1c",
+              "rendering": "eeb0fb1c",
+              "servedOthersRender": false,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:22.031Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 99,
+              "at": "2026-09-18T16:25:31.164Z",
+              "serving": "d5c04b0e",
+              "rendering": "eeb0fb1c",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:22.031Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 727,
+              "at": "2026-09-18T16:25:31.792Z",
+              "serving": "5c238786",
+              "rendering": "5c238786",
+              "servedOthersRender": false,
+              "modifiedGmt": "2026-09-18T16:25:27",
+              "renderedAt": "2026-09-18T16:25:31.676Z",
+              "nextCache": "REVALIDATED",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 97,
+              "at": "2026-09-18T16:25:31.163Z",
+              "serving": "2ec6bd0a",
+              "rendering": "eeb0fb1c",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:22.031Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 110,
+              "at": "2026-09-18T16:25:31.176Z",
+              "serving": "02dbc410",
+              "rendering": "eeb0fb1c",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:16",
+              "renderedAt": "2026-09-18T16:25:22.031Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            }
+          ]
+        },
+        {
+          "elapsedMs": 1569,
+          "n": 16,
+          "errors": 0,
+          "servingPods": [
+            "71d49079",
+            "8fa97c5a",
+            "eeb0fb1c",
+            "2ec6bd0a",
+            "d5c04b0e",
+            "02dbc410",
+            "5c238786"
+          ],
+          "renderingPods": [
+            "5c238786"
+          ],
+          "distinctVersions": [
+            "2026-09-18T16:25:27"
+          ],
+          "diverged": false,
+          "freshCount": 16,
+          "crossPodServes": 14,
+          "freshOnNonPurgingPods": [
+            "71d49079",
+            "8fa97c5a",
+            "eeb0fb1c",
+            "2ec6bd0a",
+            "d5c04b0e",
+            "02dbc410"
+          ],
+          "nextCacheStatuses": [
+            "HIT"
+          ],
+          "samples": [
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 130,
+              "at": "2026-09-18T16:25:32.523Z",
+              "serving": "71d49079",
+              "rendering": "5c238786",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:27",
+              "renderedAt": "2026-09-18T16:25:31.676Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 126,
+              "at": "2026-09-18T16:25:32.520Z",
+              "serving": "8fa97c5a",
+              "rendering": "5c238786",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:27",
+              "renderedAt": "2026-09-18T16:25:31.676Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 125,
+              "at": "2026-09-18T16:25:32.520Z",
+              "serving": "8fa97c5a",
+              "rendering": "5c238786",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:27",
+              "renderedAt": "2026-09-18T16:25:31.676Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 125,
+              "at": "2026-09-18T16:25:32.520Z",
+              "serving": "8fa97c5a",
+              "rendering": "5c238786",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:27",
+              "renderedAt": "2026-09-18T16:25:31.676Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 125,
+              "at": "2026-09-18T16:25:32.520Z",
+              "serving": "eeb0fb1c",
+              "rendering": "5c238786",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:27",
+              "renderedAt": "2026-09-18T16:25:31.676Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 124,
+              "at": "2026-09-18T16:25:32.520Z",
+              "serving": "2ec6bd0a",
+              "rendering": "5c238786",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:27",
+              "renderedAt": "2026-09-18T16:25:31.676Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 119,
+              "at": "2026-09-18T16:25:32.515Z",
+              "serving": "eeb0fb1c",
+              "rendering": "5c238786",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:27",
+              "renderedAt": "2026-09-18T16:25:31.676Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 130,
+              "at": "2026-09-18T16:25:32.526Z",
+              "serving": "71d49079",
+              "rendering": "5c238786",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:27",
+              "renderedAt": "2026-09-18T16:25:31.676Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 120,
+              "at": "2026-09-18T16:25:32.516Z",
+              "serving": "eeb0fb1c",
+              "rendering": "5c238786",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:27",
+              "renderedAt": "2026-09-18T16:25:31.676Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 124,
+              "at": "2026-09-18T16:25:32.520Z",
+              "serving": "d5c04b0e",
+              "rendering": "5c238786",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:27",
+              "renderedAt": "2026-09-18T16:25:31.676Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 126,
+              "at": "2026-09-18T16:25:32.523Z",
+              "serving": "02dbc410",
+              "rendering": "5c238786",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:27",
+              "renderedAt": "2026-09-18T16:25:31.676Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 123,
+              "at": "2026-09-18T16:25:32.520Z",
+              "serving": "71d49079",
+              "rendering": "5c238786",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:27",
+              "renderedAt": "2026-09-18T16:25:31.676Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 123,
+              "at": "2026-09-18T16:25:32.520Z",
+              "serving": "d5c04b0e",
+              "rendering": "5c238786",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:27",
+              "renderedAt": "2026-09-18T16:25:31.676Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 122,
+              "at": "2026-09-18T16:25:32.520Z",
+              "serving": "5c238786",
+              "rendering": "5c238786",
+              "servedOthersRender": false,
+              "modifiedGmt": "2026-09-18T16:25:27",
+              "renderedAt": "2026-09-18T16:25:31.676Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 121,
+              "at": "2026-09-18T16:25:32.519Z",
+              "serving": "8fa97c5a",
+              "rendering": "5c238786",
+              "servedOthersRender": true,
+              "modifiedGmt": "2026-09-18T16:25:27",
+              "renderedAt": "2026-09-18T16:25:31.676Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            },
+            {
+              "path": "/rh",
+              "status": 200,
+              "ms": 121,
+              "at": "2026-09-18T16:25:32.519Z",
+              "serving": "5c238786",
+              "rendering": "5c238786",
+              "servedOthersRender": false,
+              "modifiedGmt": "2026-09-18T16:25:27",
+              "renderedAt": "2026-09-18T16:25:31.676Z",
+              "nextCache": "HIT",
+              "cf": "MISS"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "discover": {
+    "podsObserved": 7,
+    "pods": [
+      {
+        "id": "02dbc410",
+        "host": "h1zqz5eo211ukydaab4lzvbse-00009-deployment-85cb44cb98-xb7tt",
+        "pid": 17,
+        "bootedAt": "2026-09-18T16:24:23.806Z",
+        "uptimeSeconds": 52
+      },
+      {
+        "id": "71d49079",
+        "host": "h1zqz5eo211ukydaab4lzvbse-00009-deployment-85cb44cb98-n8nk7",
+        "pid": 18,
+        "bootedAt": "2026-09-18T16:24:49.355Z",
+        "uptimeSeconds": 26
+      },
+      {
+        "id": "8fa97c5a",
+        "host": "h1zqz5eo211ukydaab4lzvbse-00009-deployment-85cb44cb98-2pmhb",
+        "pid": 18,
+        "bootedAt": "2026-09-18T16:24:32.486Z",
+        "uptimeSeconds": 43
+      },
+      {
+        "id": "d5c04b0e",
+        "host": "h1zqz5eo211ukydaab4lzvbse-00009-deployment-85cb44cb98-xdhx6",
+        "pid": 17,
+        "bootedAt": "2026-09-18T16:24:30.503Z",
+        "uptimeSeconds": 45
+      },
+      {
+        "id": "2ec6bd0a",
+        "host": "h1zqz5eo211ukydaab4lzvbse-00009-deployment-85cb44cb98-h7knh",
+        "pid": 18,
+        "bootedAt": "2026-09-18T16:24:40.661Z",
+        "uptimeSeconds": 35
+      },
+      {
+        "id": "eeb0fb1c",
+        "host": "h1zqz5eo211ukydaab4lzvbse-00009-deployment-85cb44cb98-dk8qq",
+        "pid": 18,
+        "bootedAt": "2026-09-18T16:23:27.375Z",
+        "uptimeSeconds": 107
+      },
+      {
+        "id": "5c238786",
+        "host": "h1zqz5eo211ukydaab4lzvbse-00009-deployment-85cb44cb98-mzxpl",
+        "pid": 18,
+        "bootedAt": "2026-09-18T16:24:25.717Z",
+        "uptimeSeconds": 50
+      }
+    ],
+    "kv": {
+      "kvUrlPresent": true,
+      "kvTokenPresent": true,
+      "rolloutPercent": null,
+      "buildId": "1ce79ef4-5d67-3a60-36b1-0838fbbfb17c",
+      "debug": null
+    }
+  },
+  "finishedAt": "2026-09-18T16:25:32.526Z"
+}
