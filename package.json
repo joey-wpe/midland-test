@@ -1,0 +1,24 @@
+{
+  "name": "atlas-revalidate-wpe",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "matrix": "node scripts/run-atlas-matrix.mjs"
+  },
+  "dependencies": {
+    "@wpengine/atlas-next": "^3.0.3",
+    "@wpengine/edge-cache": "^1.0.0",
+    "next": "16.3.5",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
+  }
+}
