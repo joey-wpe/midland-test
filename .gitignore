@@ -1,5 +1,5 @@
 node_modules
 .next
 .env.local
-results
+results/local-smoke.json
 *.log

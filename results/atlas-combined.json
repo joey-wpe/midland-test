@@ -1,0 +1,967 @@
+{
+  "base": "https://h1zqz5eo211ukydaab4lzvbse.js.wpenginepowered.com",
+  "startedAt": "2026-09-18T15:14:00.927Z",
+  "config": {
+    "SAMPLES": 8,
+    "WINDOW_S": 60
+  },
+  "cells": {
+    "revalidate-then-purge": {
+      "note": "The production sequence: revalidate the origin, THEN purge the edge. The only combination that reaches a real visitor.",
+      "route": "/a",
+      "baseline": {
+        "n": 8,
+        "distinctVersions": [
+          "2026-09-18T15:06:13"
+        ],
+        "distinctRenderingInstances": [
+          "4157bfb8@h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt"
+        ],
+        "distinctUpstreamDates": [
+          "Fri, 18 Sep 2026 15:06:14 GMT"
+        ],
+        "diverged": false,
+        "cfStatuses": [
+          "MISS"
+        ],
+        "nextCacheStatuses": [
+          "HIT"
+        ],
+        "samples": [
+          {
+            "path": "/a",
+            "bust": true,
+            "status": 200,
+            "ms": 248,
+            "at": "2026-09-18T15:14:01.177Z",
+            "headers": {
+              "x-nextjs-cache": "HIT",
+              "cache-control": "s-maxage=3600, stale-while-revalidate=31532400",
+              "age": null,
+              "x-cache": null,
+              "cf-cache-status": "MISS",
+              "x-wpe-instance": null,
+              "date": "Fri, 18 Sep 2026 15:14:01 GMT"
+            },
+            "probe": {
+              "route": "a",
+              "modifiedGmt": "2026-09-18T15:06:13",
+              "postId": 3267,
+              "slug": "server-actions-in-next-js-the-key-to-simplified-server-logic-in-headless-wordpress",
+              "upstreamDate": "Fri, 18 Sep 2026 15:06:14 GMT",
+              "graphqlKeysHash": null,
+              "fetchedAt": "2026-09-18T15:06:14.008Z",
+              "renderedAt": "2026-09-18T15:06:14.223Z",
+              "instance": {
+                "id": "4157bfb8",
+                "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                "pid": 17,
+                "bootedAt": "2026-09-18T15:02:04.489Z"
+              },
+              "kv": {
+                "kvUrlPresent": true,
+                "kvTokenPresent": true,
+                "rolloutPercent": null,
+                "buildId": "74493237-faf3-b3b7-0f8f-10a122072baa",
+                "debug": null
+              },
+              "error": null
+            }
+          },
+          {
+            "path": "/a",
+            "bust": true,
+            "status": 200,
+            "ms": 223,
+            "at": "2026-09-18T15:14:01.182Z",
+            "headers": {
+              "x-nextjs-cache": "HIT",
+              "cache-control": "s-maxage=3600, stale-while-revalidate=31532400",
+              "age": null,
+              "x-cache": null,
+              "cf-cache-status": "MISS",
+              "x-wpe-instance": null,
+              "date": "Fri, 18 Sep 2026 15:14:01 GMT"
+            },
+            "probe": {
+              "route": "a",
+              "modifiedGmt": "2026-09-18T15:06:13",
+              "postId": 3267,
+              "slug": "server-actions-in-next-js-the-key-to-simplified-server-logic-in-headless-wordpress",
+              "upstreamDate": "Fri, 18 Sep 2026 15:06:14 GMT",
+              "graphqlKeysHash": null,
+              "fetchedAt": "2026-09-18T15:06:14.008Z",
+              "renderedAt": "2026-09-18T15:06:14.223Z",
+              "instance": {
+                "id": "4157bfb8",
+                "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                "pid": 17,
+                "bootedAt": "2026-09-18T15:02:04.489Z"
+              },
+              "kv": {
+                "kvUrlPresent": true,
+                "kvTokenPresent": true,
+                "rolloutPercent": null,
+                "buildId": "74493237-faf3-b3b7-0f8f-10a122072baa",
+                "debug": null
+              },
+              "error": null
+            }
+          },
+          {
+            "path": "/a",
+            "bust": true,
+            "status": 200,
+            "ms": 212,
+            "at": "2026-09-18T15:14:01.172Z",
+            "headers": {
+              "x-nextjs-cache": "HIT",
+              "cache-control": "s-maxage=3600, stale-while-revalidate=31532400",
+              "age": null,
+              "x-cache": null,
+              "cf-cache-status": "MISS",
+              "x-wpe-instance": null,
+              "date": "Fri, 18 Sep 2026 15:14:01 GMT"
+            },
+            "probe": {
+              "route": "a",
+              "modifiedGmt": "2026-09-18T15:06:13",
+              "postId": 3267,
+              "slug": "server-actions-in-next-js-the-key-to-simplified-server-logic-in-headless-wordpress",
+              "upstreamDate": "Fri, 18 Sep 2026 15:06:14 GMT",
+              "graphqlKeysHash": null,
+              "fetchedAt": "2026-09-18T15:06:14.008Z",
+              "renderedAt": "2026-09-18T15:06:14.223Z",
+              "instance": {
+                "id": "4157bfb8",
+                "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                "pid": 17,
+                "bootedAt": "2026-09-18T15:02:04.489Z"
+              },
+              "kv": {
+                "kvUrlPresent": true,
+                "kvTokenPresent": true,
+                "rolloutPercent": null,
+                "buildId": "74493237-faf3-b3b7-0f8f-10a122072baa",
+                "debug": null
+              },
+              "error": null
+            }
+          },
+          {
+            "path": "/a",
+            "bust": true,
+            "status": 200,
+            "ms": 211,
+            "at": "2026-09-18T15:14:01.171Z",
+            "headers": {
+              "x-nextjs-cache": "HIT",
+              "cache-control": "s-maxage=3600, stale-while-revalidate=31532400",
+              "age": null,
+              "x-cache": null,
+              "cf-cache-status": "MISS",
+              "x-wpe-instance": null,
+              "date": "Fri, 18 Sep 2026 15:14:01 GMT"
+            },
+            "probe": {
+              "route": "a",
+              "modifiedGmt": "2026-09-18T15:06:13",
+              "postId": 3267,
+              "slug": "server-actions-in-next-js-the-key-to-simplified-server-logic-in-headless-wordpress",
+              "upstreamDate": "Fri, 18 Sep 2026 15:06:14 GMT",
+              "graphqlKeysHash": null,
+              "fetchedAt": "2026-09-18T15:06:14.008Z",
+              "renderedAt": "2026-09-18T15:06:14.223Z",
+              "instance": {
+                "id": "4157bfb8",
+                "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                "pid": 17,
+                "bootedAt": "2026-09-18T15:02:04.489Z"
+              },
+              "kv": {
+                "kvUrlPresent": true,
+                "kvTokenPresent": true,
+                "rolloutPercent": null,
+                "buildId": "74493237-faf3-b3b7-0f8f-10a122072baa",
+                "debug": null
+              },
+              "error": null
+            }
+          },
+          {
+            "path": "/a",
+            "bust": true,
+            "status": 200,
+            "ms": 228,
+            "at": "2026-09-18T15:14:01.189Z",
+            "headers": {
+              "x-nextjs-cache": "HIT",
+              "cache-control": "s-maxage=3600, stale-while-revalidate=31532400",
+              "age": null,
+              "x-cache": null,
+              "cf-cache-status": "MISS",
+              "x-wpe-instance": null,
+              "date": "Fri, 18 Sep 2026 15:14:01 GMT"
+            },
+            "probe": {
+              "route": "a",
+              "modifiedGmt": "2026-09-18T15:06:13",
+              "postId": 3267,
+              "slug": "server-actions-in-next-js-the-key-to-simplified-server-logic-in-headless-wordpress",
+              "upstreamDate": "Fri, 18 Sep 2026 15:06:14 GMT",
+              "graphqlKeysHash": null,
+              "fetchedAt": "2026-09-18T15:06:14.008Z",
+              "renderedAt": "2026-09-18T15:06:14.223Z",
+              "instance": {
+                "id": "4157bfb8",
+                "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                "pid": 17,
+                "bootedAt": "2026-09-18T15:02:04.489Z"
+              },
+              "kv": {
+                "kvUrlPresent": true,
+                "kvTokenPresent": true,
+                "rolloutPercent": null,
+                "buildId": "74493237-faf3-b3b7-0f8f-10a122072baa",
+                "debug": null
+              },
+              "error": null
+            }
+          },
+          {
+            "path": "/a",
+            "bust": true,
+            "status": 200,
+            "ms": 211,
+            "at": "2026-09-18T15:14:01.172Z",
+            "headers": {
+              "x-nextjs-cache": "HIT",
+              "cache-control": "s-maxage=3600, stale-while-revalidate=31532400",
+              "age": null,
+              "x-cache": null,
+              "cf-cache-status": "MISS",
+              "x-wpe-instance": null,
+              "date": "Fri, 18 Sep 2026 15:14:01 GMT"
+            },
+            "probe": {
+              "route": "a",
+              "modifiedGmt": "2026-09-18T15:06:13",
+              "postId": 3267,
+              "slug": "server-actions-in-next-js-the-key-to-simplified-server-logic-in-headless-wordpress",
+              "upstreamDate": "Fri, 18 Sep 2026 15:06:14 GMT",
+              "graphqlKeysHash": null,
+              "fetchedAt": "2026-09-18T15:06:14.008Z",
+              "renderedAt": "2026-09-18T15:06:14.223Z",
+              "instance": {
+                "id": "4157bfb8",
+                "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                "pid": 17,
+                "bootedAt": "2026-09-18T15:02:04.489Z"
+              },
+              "kv": {
+                "kvUrlPresent": true,
+                "kvTokenPresent": true,
+                "rolloutPercent": null,
+                "buildId": "74493237-faf3-b3b7-0f8f-10a122072baa",
+                "debug": null
+              },
+              "error": null
+            }
+          },
+          {
+            "path": "/a",
+            "bust": true,
+            "status": 200,
+            "ms": 216,
+            "at": "2026-09-18T15:14:01.177Z",
+            "headers": {
+              "x-nextjs-cache": "HIT",
+              "cache-control": "s-maxage=3600, stale-while-revalidate=31532400",
+              "age": null,
+              "x-cache": null,
+              "cf-cache-status": "MISS",
+              "x-wpe-instance": null,
+              "date": "Fri, 18 Sep 2026 15:14:01 GMT"
+            },
+            "probe": {
+              "route": "a",
+              "modifiedGmt": "2026-09-18T15:06:13",
+              "postId": 3267,
+              "slug": "server-actions-in-next-js-the-key-to-simplified-server-logic-in-headless-wordpress",
+              "upstreamDate": "Fri, 18 Sep 2026 15:06:14 GMT",
+              "graphqlKeysHash": null,
+              "fetchedAt": "2026-09-18T15:06:14.008Z",
+              "renderedAt": "2026-09-18T15:06:14.223Z",
+              "instance": {
+                "id": "4157bfb8",
+                "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                "pid": 17,
+                "bootedAt": "2026-09-18T15:02:04.489Z"
+              },
+              "kv": {
+                "kvUrlPresent": true,
+                "kvTokenPresent": true,
+                "rolloutPercent": null,
+                "buildId": "74493237-faf3-b3b7-0f8f-10a122072baa",
+                "debug": null
+              },
+              "error": null
+            }
+          },
+          {
+            "path": "/a",
+            "bust": true,
+            "status": 200,
+            "ms": 220,
+            "at": "2026-09-18T15:14:01.182Z",
+            "headers": {
+              "x-nextjs-cache": "HIT",
+              "cache-control": "s-maxage=3600, stale-while-revalidate=31532400",
+              "age": null,
+              "x-cache": null,
+              "cf-cache-status": "MISS",
+              "x-wpe-instance": null,
+              "date": "Fri, 18 Sep 2026 15:14:01 GMT"
+            },
+            "probe": {
+              "route": "a",
+              "modifiedGmt": "2026-09-18T15:06:13",
+              "postId": 3267,
+              "slug": "server-actions-in-next-js-the-key-to-simplified-server-logic-in-headless-wordpress",
+              "upstreamDate": "Fri, 18 Sep 2026 15:06:14 GMT",
+              "graphqlKeysHash": null,
+              "fetchedAt": "2026-09-18T15:06:14.008Z",
+              "renderedAt": "2026-09-18T15:06:14.223Z",
+              "instance": {
+                "id": "4157bfb8",
+                "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                "pid": 17,
+                "bootedAt": "2026-09-18T15:02:04.489Z"
+              },
+              "kv": {
+                "kvUrlPresent": true,
+                "kvTokenPresent": true,
+                "rolloutPercent": null,
+                "buildId": "74493237-faf3-b3b7-0f8f-10a122072baa",
+                "debug": null
+              },
+              "error": null
+            }
+          }
+        ]
+      },
+      "published": {
+        "mode": "rest",
+        "status": 200,
+        "at": "2026-09-18T15:14:01.189Z",
+        "modifiedGmt": "2026-09-18T15:14:01"
+      },
+      "expectedVersion": "2026-09-18T15:14:01",
+      "preStale": {
+        "n": 8,
+        "distinctVersions": [
+          "2026-09-18T15:06:13"
+        ],
+        "distinctRenderingInstances": [
+          "4157bfb8@h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt"
+        ],
+        "distinctUpstreamDates": [
+          "Fri, 18 Sep 2026 15:06:14 GMT"
+        ],
+        "diverged": false,
+        "cfStatuses": [
+          "MISS"
+        ],
+        "nextCacheStatuses": [
+          "HIT"
+        ],
+        "wasStale": true
+      },
+      "purge": {
+        "steps": [
+          {
+            "url": "https://h1zqz5eo211ukydaab4lzvbse.js.wpenginepowered.com/api/revalidate?secret=<secret>&path=%2Fa",
+            "status": 200,
+            "startedAt": "2026-09-18T15:14:02.171Z",
+            "finishedAt": "2026-09-18T15:14:02.614Z",
+            "body": {
+              "ok": true,
+              "method": "res.revalidate",
+              "path": "/a",
+              "instance": {
+                "id": "4157bfb8",
+                "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                "pid": 17,
+                "bootedAt": "2026-09-18T15:02:04.489Z"
+              },
+              "startedAt": "2026-09-18T15:14:02.271Z",
+              "finishedAt": "2026-09-18T15:14:02.632Z"
+            }
+          },
+          {
+            "url": "https://h1zqz5eo211ukydaab4lzvbse.js.wpenginepowered.com/api/purge-edge?secret=<secret>&paths=%2Fa",
+            "status": 200,
+            "startedAt": "2026-09-18T15:14:02.614Z",
+            "finishedAt": "2026-09-18T15:14:02.935Z",
+            "body": {
+              "ok": true,
+              "method": "purgePaths",
+              "paths": [
+                "/a"
+              ],
+              "instance": {
+                "id": "4157bfb8",
+                "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                "pid": 17,
+                "bootedAt": "2026-09-18T15:02:04.489Z"
+              }
+            }
+          }
+        ],
+        "ok": true,
+        "body": {
+          "ok": true
+        }
+      },
+      "convergence": {
+        "path": "/a",
+        "expectedVersion": "2026-09-18T15:14:01",
+        "firstFreshMs": 302,
+        "allFreshMs": 302,
+        "convergedWithinWindow": true,
+        "edgeAllFreshMs": 302,
+        "edgeConvergedWithinWindow": true,
+        "everDiverged": false,
+        "rounds": [
+          {
+            "elapsedMs": 302,
+            "freshCount": 8,
+            "edgeFreshCount": 4,
+            "n": 8,
+            "distinctVersions": [
+              "2026-09-18T15:14:01"
+            ],
+            "distinctRenderingInstances": [
+              "4157bfb8@h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt"
+            ],
+            "distinctUpstreamDates": [
+              "Fri, 18 Sep 2026 15:14:02 GMT"
+            ],
+            "diverged": false,
+            "cfStatuses": [
+              "MISS"
+            ],
+            "nextCacheStatuses": [
+              "HIT"
+            ],
+            "edge": {
+              "n": 4,
+              "distinctVersions": [
+                "2026-09-18T15:14:01"
+              ],
+              "distinctRenderingInstances": [
+                "4157bfb8@h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt"
+              ],
+              "distinctUpstreamDates": [
+                "Fri, 18 Sep 2026 15:14:02 GMT"
+              ],
+              "diverged": false,
+              "cfStatuses": [
+                "HIT",
+                "MISS"
+              ],
+              "nextCacheStatuses": [
+                "HIT"
+              ]
+            },
+            "samples": [
+              {
+                "path": "/a",
+                "bust": true,
+                "status": 200,
+                "ms": 105,
+                "at": "2026-09-18T15:14:03.040Z",
+                "headers": {
+                  "x-nextjs-cache": "HIT",
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=31532400",
+                  "age": null,
+                  "x-cache": null,
+                  "cf-cache-status": "MISS",
+                  "x-wpe-instance": null,
+                  "date": "Fri, 18 Sep 2026 15:14:03 GMT"
+                },
+                "probe": {
+                  "route": "a",
+                  "modifiedGmt": "2026-09-18T15:14:01",
+                  "postId": 3267,
+                  "slug": "server-actions-in-next-js-the-key-to-simplified-server-logic-in-headless-wordpress",
+                  "upstreamDate": "Fri, 18 Sep 2026 15:14:02 GMT",
+                  "graphqlKeysHash": null,
+                  "fetchedAt": "2026-09-18T15:14:02.313Z",
+                  "renderedAt": "2026-09-18T15:14:02.505Z",
+                  "instance": {
+                    "id": "4157bfb8",
+                    "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                    "pid": 17,
+                    "bootedAt": "2026-09-18T15:02:04.489Z"
+                  },
+                  "kv": {
+                    "kvUrlPresent": true,
+                    "kvTokenPresent": true,
+                    "rolloutPercent": null,
+                    "buildId": "74493237-faf3-b3b7-0f8f-10a122072baa",
+                    "debug": null
+                  },
+                  "error": null
+                }
+              },
+              {
+                "path": "/a",
+                "bust": true,
+                "status": 200,
+                "ms": 103,
+                "at": "2026-09-18T15:14:03.039Z",
+                "headers": {
+                  "x-nextjs-cache": "HIT",
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=31532400",
+                  "age": null,
+                  "x-cache": null,
+                  "cf-cache-status": "MISS",
+                  "x-wpe-instance": null,
+                  "date": "Fri, 18 Sep 2026 15:14:03 GMT"
+                },
+                "probe": {
+                  "route": "a",
+                  "modifiedGmt": "2026-09-18T15:14:01",
+                  "postId": 3267,
+                  "slug": "server-actions-in-next-js-the-key-to-simplified-server-logic-in-headless-wordpress",
+                  "upstreamDate": "Fri, 18 Sep 2026 15:14:02 GMT",
+                  "graphqlKeysHash": null,
+                  "fetchedAt": "2026-09-18T15:14:02.313Z",
+                  "renderedAt": "2026-09-18T15:14:02.505Z",
+                  "instance": {
+                    "id": "4157bfb8",
+                    "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                    "pid": 17,
+                    "bootedAt": "2026-09-18T15:02:04.489Z"
+                  },
+                  "kv": {
+                    "kvUrlPresent": true,
+                    "kvTokenPresent": true,
+                    "rolloutPercent": null,
+                    "buildId": "74493237-faf3-b3b7-0f8f-10a122072baa",
+                    "debug": null
+                  },
+                  "error": null
+                }
+              },
+              {
+                "path": "/a",
+                "bust": true,
+                "status": 200,
+                "ms": 96,
+                "at": "2026-09-18T15:14:03.032Z",
+                "headers": {
+                  "x-nextjs-cache": "HIT",
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=31532400",
+                  "age": null,
+                  "x-cache": null,
+                  "cf-cache-status": "MISS",
+                  "x-wpe-instance": null,
+                  "date": "Fri, 18 Sep 2026 15:14:03 GMT"
+                },
+                "probe": {
+                  "route": "a",
+                  "modifiedGmt": "2026-09-18T15:14:01",
+                  "postId": 3267,
+                  "slug": "server-actions-in-next-js-the-key-to-simplified-server-logic-in-headless-wordpress",
+                  "upstreamDate": "Fri, 18 Sep 2026 15:14:02 GMT",
+                  "graphqlKeysHash": null,
+                  "fetchedAt": "2026-09-18T15:14:02.313Z",
+                  "renderedAt": "2026-09-18T15:14:02.505Z",
+                  "instance": {
+                    "id": "4157bfb8",
+                    "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                    "pid": 17,
+                    "bootedAt": "2026-09-18T15:02:04.489Z"
+                  },
+                  "kv": {
+                    "kvUrlPresent": true,
+                    "kvTokenPresent": true,
+                    "rolloutPercent": null,
+                    "buildId": "74493237-faf3-b3b7-0f8f-10a122072baa",
+                    "debug": null
+                  },
+                  "error": null
+                }
+              },
+              {
+                "path": "/a",
+                "bust": true,
+                "status": 200,
+                "ms": 95,
+                "at": "2026-09-18T15:14:03.031Z",
+                "headers": {
+                  "x-nextjs-cache": "HIT",
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=31532400",
+                  "age": null,
+                  "x-cache": null,
+                  "cf-cache-status": "MISS",
+                  "x-wpe-instance": null,
+                  "date": "Fri, 18 Sep 2026 15:14:03 GMT"
+                },
+                "probe": {
+                  "route": "a",
+                  "modifiedGmt": "2026-09-18T15:14:01",
+                  "postId": 3267,
+                  "slug": "server-actions-in-next-js-the-key-to-simplified-server-logic-in-headless-wordpress",
+                  "upstreamDate": "Fri, 18 Sep 2026 15:14:02 GMT",
+                  "graphqlKeysHash": null,
+                  "fetchedAt": "2026-09-18T15:14:02.313Z",
+                  "renderedAt": "2026-09-18T15:14:02.505Z",
+                  "instance": {
+                    "id": "4157bfb8",
+                    "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                    "pid": 17,
+                    "bootedAt": "2026-09-18T15:02:04.489Z"
+                  },
+                  "kv": {
+                    "kvUrlPresent": true,
+                    "kvTokenPresent": true,
+                    "rolloutPercent": null,
+                    "buildId": "74493237-faf3-b3b7-0f8f-10a122072baa",
+                    "debug": null
+                  },
+                  "error": null
+                }
+              },
+              {
+                "path": "/a",
+                "bust": true,
+                "status": 200,
+                "ms": 103,
+                "at": "2026-09-18T15:14:03.040Z",
+                "headers": {
+                  "x-nextjs-cache": "HIT",
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=31532400",
+                  "age": null,
+                  "x-cache": null,
+                  "cf-cache-status": "MISS",
+                  "x-wpe-instance": null,
+                  "date": "Fri, 18 Sep 2026 15:14:03 GMT"
+                },
+                "probe": {
+                  "route": "a",
+                  "modifiedGmt": "2026-09-18T15:14:01",
+                  "postId": 3267,
+                  "slug": "server-actions-in-next-js-the-key-to-simplified-server-logic-in-headless-wordpress",
+                  "upstreamDate": "Fri, 18 Sep 2026 15:14:02 GMT",
+                  "graphqlKeysHash": null,
+                  "fetchedAt": "2026-09-18T15:14:02.313Z",
+                  "renderedAt": "2026-09-18T15:14:02.505Z",
+                  "instance": {
+                    "id": "4157bfb8",
+                    "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                    "pid": 17,
+                    "bootedAt": "2026-09-18T15:02:04.489Z"
+                  },
+                  "kv": {
+                    "kvUrlPresent": true,
+                    "kvTokenPresent": true,
+                    "rolloutPercent": null,
+                    "buildId": "74493237-faf3-b3b7-0f8f-10a122072baa",
+                    "debug": null
+                  },
+                  "error": null
+                }
+              },
+              {
+                "path": "/a",
+                "bust": true,
+                "status": 200,
+                "ms": 298,
+                "at": "2026-09-18T15:14:03.235Z",
+                "headers": {
+                  "x-nextjs-cache": "HIT",
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=31532400",
+                  "age": null,
+                  "x-cache": null,
+                  "cf-cache-status": "MISS",
+                  "x-wpe-instance": null,
+                  "date": "Fri, 18 Sep 2026 15:14:03 GMT"
+                },
+                "probe": {
+                  "route": "a",
+                  "modifiedGmt": "2026-09-18T15:14:01",
+                  "postId": 3267,
+                  "slug": "server-actions-in-next-js-the-key-to-simplified-server-logic-in-headless-wordpress",
+                  "upstreamDate": "Fri, 18 Sep 2026 15:14:02 GMT",
+                  "graphqlKeysHash": null,
+                  "fetchedAt": "2026-09-18T15:14:02.313Z",
+                  "renderedAt": "2026-09-18T15:14:02.505Z",
+                  "instance": {
+                    "id": "4157bfb8",
+                    "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                    "pid": 17,
+                    "bootedAt": "2026-09-18T15:02:04.489Z"
+                  },
+                  "kv": {
+                    "kvUrlPresent": true,
+                    "kvTokenPresent": true,
+                    "rolloutPercent": null,
+                    "buildId": "74493237-faf3-b3b7-0f8f-10a122072baa",
+                    "debug": null
+                  },
+                  "error": null
+                }
+              },
+              {
+                "path": "/a",
+                "bust": true,
+                "status": 200,
+                "ms": 299,
+                "at": "2026-09-18T15:14:03.236Z",
+                "headers": {
+                  "x-nextjs-cache": "HIT",
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=31532400",
+                  "age": null,
+                  "x-cache": null,
+                  "cf-cache-status": "MISS",
+                  "x-wpe-instance": null,
+                  "date": "Fri, 18 Sep 2026 15:14:03 GMT"
+                },
+                "probe": {
+                  "route": "a",
+                  "modifiedGmt": "2026-09-18T15:14:01",
+                  "postId": 3267,
+                  "slug": "server-actions-in-next-js-the-key-to-simplified-server-logic-in-headless-wordpress",
+                  "upstreamDate": "Fri, 18 Sep 2026 15:14:02 GMT",
+                  "graphqlKeysHash": null,
+                  "fetchedAt": "2026-09-18T15:14:02.313Z",
+                  "renderedAt": "2026-09-18T15:14:02.505Z",
+                  "instance": {
+                    "id": "4157bfb8",
+                    "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                    "pid": 17,
+                    "bootedAt": "2026-09-18T15:02:04.489Z"
+                  },
+                  "kv": {
+                    "kvUrlPresent": true,
+                    "kvTokenPresent": true,
+                    "rolloutPercent": null,
+                    "buildId": "74493237-faf3-b3b7-0f8f-10a122072baa",
+                    "debug": null
+                  },
+                  "error": null
+                }
+              },
+              {
+                "path": "/a",
+                "bust": true,
+                "status": 200,
+                "ms": 299,
+                "at": "2026-09-18T15:14:03.236Z",
+                "headers": {
+                  "x-nextjs-cache": "HIT",
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=31532400",
+                  "age": null,
+                  "x-cache": null,
+                  "cf-cache-status": "MISS",
+                  "x-wpe-instance": null,
+                  "date": "Fri, 18 Sep 2026 15:14:03 GMT"
+                },
+                "probe": {
+                  "route": "a",
+                  "modifiedGmt": "2026-09-18T15:14:01",
+                  "postId": 3267,
+                  "slug": "server-actions-in-next-js-the-key-to-simplified-server-logic-in-headless-wordpress",
+                  "upstreamDate": "Fri, 18 Sep 2026 15:14:02 GMT",
+                  "graphqlKeysHash": null,
+                  "fetchedAt": "2026-09-18T15:14:02.313Z",
+                  "renderedAt": "2026-09-18T15:14:02.505Z",
+                  "instance": {
+                    "id": "4157bfb8",
+                    "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                    "pid": 17,
+                    "bootedAt": "2026-09-18T15:02:04.489Z"
+                  },
+                  "kv": {
+                    "kvUrlPresent": true,
+                    "kvTokenPresent": true,
+                    "rolloutPercent": null,
+                    "buildId": "74493237-faf3-b3b7-0f8f-10a122072baa",
+                    "debug": null
+                  },
+                  "error": null
+                }
+              }
+            ],
+            "edgeSamples": [
+              {
+                "path": "/a",
+                "bust": false,
+                "status": 200,
+                "ms": 235,
+                "at": "2026-09-18T15:14:03.173Z",
+                "headers": {
+                  "x-nextjs-cache": "HIT",
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=31532400",
+                  "age": "0",
+                  "x-cache": null,
+                  "cf-cache-status": "HIT",
+                  "x-wpe-instance": null,
+                  "date": "Fri, 18 Sep 2026 15:14:03 GMT"
+                },
+                "probe": {
+                  "route": "a",
+                  "modifiedGmt": "2026-09-18T15:14:01",
+                  "postId": 3267,
+                  "slug": "server-actions-in-next-js-the-key-to-simplified-server-logic-in-headless-wordpress",
+                  "upstreamDate": "Fri, 18 Sep 2026 15:14:02 GMT",
+                  "graphqlKeysHash": null,
+                  "fetchedAt": "2026-09-18T15:14:02.313Z",
+                  "renderedAt": "2026-09-18T15:14:02.505Z",
+                  "instance": {
+                    "id": "4157bfb8",
+                    "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                    "pid": 17,
+                    "bootedAt": "2026-09-18T15:02:04.489Z"
+                  },
+                  "kv": {
+                    "kvUrlPresent": true,
+                    "kvTokenPresent": true,
+                    "rolloutPercent": null,
+                    "buildId": "74493237-faf3-b3b7-0f8f-10a122072baa",
+                    "debug": null
+                  },
+                  "error": null
+                }
+              },
+              {
+                "path": "/a",
+                "bust": false,
+                "status": 200,
+                "ms": 235,
+                "at": "2026-09-18T15:14:03.173Z",
+                "headers": {
+                  "x-nextjs-cache": "HIT",
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=31532400",
+                  "age": "0",
+                  "x-cache": null,
+                  "cf-cache-status": "HIT",
+                  "x-wpe-instance": null,
+                  "date": "Fri, 18 Sep 2026 15:14:03 GMT"
+                },
+                "probe": {
+                  "route": "a",
+                  "modifiedGmt": "2026-09-18T15:14:01",
+                  "postId": 3267,
+                  "slug": "server-actions-in-next-js-the-key-to-simplified-server-logic-in-headless-wordpress",
+                  "upstreamDate": "Fri, 18 Sep 2026 15:14:02 GMT",
+                  "graphqlKeysHash": null,
+                  "fetchedAt": "2026-09-18T15:14:02.313Z",
+                  "renderedAt": "2026-09-18T15:14:02.505Z",
+                  "instance": {
+                    "id": "4157bfb8",
+                    "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                    "pid": 17,
+                    "bootedAt": "2026-09-18T15:02:04.489Z"
+                  },
+                  "kv": {
+                    "kvUrlPresent": true,
+                    "kvTokenPresent": true,
+                    "rolloutPercent": null,
+                    "buildId": "74493237-faf3-b3b7-0f8f-10a122072baa",
+                    "debug": null
+                  },
+                  "error": null
+                }
+              },
+              {
+                "path": "/a",
+                "bust": false,
+                "status": 200,
+                "ms": 235,
+                "at": "2026-09-18T15:14:03.173Z",
+                "headers": {
+                  "x-nextjs-cache": "HIT",
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=31532400",
+                  "age": "0",
+                  "x-cache": null,
+                  "cf-cache-status": "HIT",
+                  "x-wpe-instance": null,
+                  "date": "Fri, 18 Sep 2026 15:14:03 GMT"
+                },
+                "probe": {
+                  "route": "a",
+                  "modifiedGmt": "2026-09-18T15:14:01",
+                  "postId": 3267,
+                  "slug": "server-actions-in-next-js-the-key-to-simplified-server-logic-in-headless-wordpress",
+                  "upstreamDate": "Fri, 18 Sep 2026 15:14:02 GMT",
+                  "graphqlKeysHash": null,
+                  "fetchedAt": "2026-09-18T15:14:02.313Z",
+                  "renderedAt": "2026-09-18T15:14:02.505Z",
+                  "instance": {
+                    "id": "4157bfb8",
+                    "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                    "pid": 17,
+                    "bootedAt": "2026-09-18T15:02:04.489Z"
+                  },
+                  "kv": {
+                    "kvUrlPresent": true,
+                    "kvTokenPresent": true,
+                    "rolloutPercent": null,
+                    "buildId": "74493237-faf3-b3b7-0f8f-10a122072baa",
+                    "debug": null
+                  },
+                  "error": null
+                }
+              },
+              {
+                "path": "/a",
+                "bust": false,
+                "status": 200,
+                "ms": 244,
+                "at": "2026-09-18T15:14:03.182Z",
+                "headers": {
+                  "x-nextjs-cache": "HIT",
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=31532400",
+                  "age": null,
+                  "x-cache": null,
+                  "cf-cache-status": "MISS",
+                  "x-wpe-instance": null,
+                  "date": "Fri, 18 Sep 2026 15:14:03 GMT"
+                },
+                "probe": {
+                  "route": "a",
+                  "modifiedGmt": "2026-09-18T15:14:01",
+                  "postId": 3267,
+                  "slug": "server-actions-in-next-js-the-key-to-simplified-server-logic-in-headless-wordpress",
+                  "upstreamDate": "Fri, 18 Sep 2026 15:14:02 GMT",
+                  "graphqlKeysHash": null,
+                  "fetchedAt": "2026-09-18T15:14:02.313Z",
+                  "renderedAt": "2026-09-18T15:14:02.505Z",
+                  "instance": {
+                    "id": "4157bfb8",
+                    "host": "h1zqz5eo211ukydaab4lzvbse-00003-deployment-6d89758f87-c8nkt",
+                    "pid": 17,
+                    "bootedAt": "2026-09-18T15:02:04.489Z"
+                  },
+                  "kv": {
+                    "kvUrlPresent": true,
+                    "kvTokenPresent": true,
+                    "rolloutPercent": null,
+                    "buildId": "74493237-faf3-b3b7-0f8f-10a122072baa",
+                    "debug": null
+                  },
+                  "error": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "finishedAt": "2026-09-18T15:14:03.237Z"
+}
